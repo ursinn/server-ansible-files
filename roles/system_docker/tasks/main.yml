@@ -1,0 +1,11 @@
+---
+- name: Install docker plugin grafana/loki-docker-driver
+  community.docker.docker_plugin: 
+    plugin_name: grafana/loki-docker-driver:latest
+    alias: loki
+    state: present
+
+- name: Restart docker
+  ansible.builtin.service:
+    name: "docker"
+    state: "{{ docker_restart_handler_state }}"

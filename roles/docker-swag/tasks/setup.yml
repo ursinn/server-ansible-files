@@ -1,0 +1,77 @@
+---
+- name: Create swag network
+  community.docker.docker_network:
+    name: swag-network
+
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/docker-swag/config/nginx/proxy-confs
+    state: directory
+    mode: 0755
+
+- name: Copy files
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}"
+    mode: 0644
+  with_items:
+    - "grafana.subdomain.conf"
+    - "loki.subdomain.conf"
+    - "prometheus.subdomain.conf"
+    - "uptime-kuma.subdomain.conf"
+    - "archisteamfarm.subdomain.conf"
+
+- name: Copy .htpasswd file
+  ansible.builtin.copy:
+    content: "{{ docker_swag_htpasswd }}"
+    dest: /opt/docker-swag/config/nginx/.htpasswd
+    mode: 0644
+
+- name: Ensure linuxserver/swag image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/swag
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove swag container
+  community.docker.docker_container:
+    name: swag
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on swag container
+  community.docker.docker_container_info:
+    name: swag
+  register: result
+
+- name: Create swag container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=swag \
+    --cap-add=NET_ADMIN \
+    -e PUID=1000 \
+    -e PGID=1000 \
+    -e TZ=Europe/Zurich \
+    -e URL=app.crazycraftland.info \
+    -e VALIDATION=http \
+    -e SUBDOMAINS=grafana,loki,prometheus,uptime-kuma \
+    -e ONLY_SUBDOMAINS=true \
+    -v /opt/docker-swag/config:/config:Z \
+    -p 443:443 \
+    -p 80:80 \
+    --network=swag-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/swag
+  when:
+    pulled.changed
+    or
+    result.exists == false
+
+- name: Add swag container to bridge network
+  ansible.builtin.shell:
+    cmd: "docker network connect bridge swag"
+  when:
+    pulled.changed
+    or
+    result.exists == false

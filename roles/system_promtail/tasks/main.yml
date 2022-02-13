@@ -1,0 +1,47 @@
+---
+- name: Create config directory
+  ansible.builtin.file:
+    path: /opt/system-promtail/config
+    state: directory
+    mode: 0755
+
+- name: Copy promtail-config file
+  ansible.builtin.template:
+    src: promtail-config.yml.j2
+    dest: /opt/system-promtail/config/promtail-config.yml
+    mode: 0644
+
+- name: Ensure grafana/promtail image is pulled
+  community.docker.docker_image:
+    name: docker.io/grafana/promtail:2.4.2
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove promtail container
+  community.docker.docker_container:
+    name: promtail
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on promtail container
+  community.docker.docker_container_info:
+    name: promtail
+  register: result
+
+- name: Create promtail container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=promtail \
+    -e HOST={{ ansible_nodename }} \
+    -v /opt/system-promtail/config:/mnt/config:Z \
+    -v /var/log:/var/log:ro \
+    -p 9080:9080 \
+    --restart unless-stopped \
+    docker.io/grafana/promtail:2.4.2 \
+    -config.file=/mnt/config/promtail-config.yaml \
+    -config.expand-env=true
+  when:
+    pulled.changed
+    or
+    result.exists == false

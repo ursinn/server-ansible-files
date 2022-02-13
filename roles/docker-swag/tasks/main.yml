@@ -1,0 +1,12 @@
+---
+- include_tasks: "{{ role_path }}/tasks/setup.yml"
+  when: 
+    app_grafan_enabled|bool
+    or
+    app_loki_enabled|bool
+    or
+    app_prometheus_enabled|bool
+    or
+    app_uptime_kuma_enabled|bool
+    or
+    app_archisteamfarm_enabled|bool

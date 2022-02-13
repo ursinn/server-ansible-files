@@ -1,0 +1,15 @@
+[submodule "roles/ansible-role-oh-my-zsh"]
+	path = roles/ansible-role-oh-my-zsh
+	url = https://github.com/ursinn/ansible-role-oh-my-zsh
+[submodule "roles/ansible-node-exporter"]
+	path = roles/ansible-node-exporter
+	url = https://github.com/cloudalchemy/ansible-node-exporter.git
+[submodule "roles/ansible-role-docker"]
+	path = roles/ansible-role-docker
+	url = https://github.com/geerlingguy/ansible-role-docker.git
+[submodule "roles/ansible-role-pip"]
+	path = roles/ansible-role-pip
+	url = https://github.com/geerlingguy/ansible-role-pip.git
+[submodule "roles/ansible-role-firewall"]
+	path = roles/ansible-role-firewall
+	url = https://github.com/ursinn/ansible-role-firewall.git

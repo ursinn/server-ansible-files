@@ -1,0 +1,4 @@
+---
+- name: restart sshd
+  service: "name=sshd state={{ ssh_restart_handler_state }}"
+  ignore_errors: "{{ ansible_check_mode }}"

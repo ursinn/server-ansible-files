@@ -1,0 +1,45 @@
+---
+
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/app-loki/config
+    state: directory
+    mode: 0755
+
+- name: Copy files
+  ansible.builtin.copy:
+    src: loki-config.yml
+    dest: /opt/app-loki/config/loki-config.yml
+    mode: 0644
+
+- name: Ensure grafana/loki image is pulled
+  community.docker.docker_image:
+    name: docker.io/grafana/loki:2.4.2
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove loki container
+  community.docker.docker_container:
+    name: loki
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on loki container
+  community.docker.docker_container_info:
+    name: loki
+  register: result
+
+- name: Create loki container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=loki \
+    -v /opt/app-loki/config:/mnt/config:Z \
+    --network=swag-network \
+    --restart unless-stopped \
+    docker.io/grafana/loki:2.4.2 \
+    -config.file=/mnt/config/loki-config.yaml
+  when: 
+    pulled.changed
+    or
+    result.exists == false

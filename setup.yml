@@ -1,0 +1,26 @@
+---
+- name: "Set up a Server"
+  #hosts: "{{ target if target is defined else 'servers' }}"
+  hosts: "localhost"
+  become: true
+
+  roles:
+    - system_ssh
+    - system_update
+    - system_setup
+    - ansible-role-pip
+    - ansible-role-firewall
+    - system_fail2ban
+#    - system_endlessh
+    - ansible-role-docker
+    - system_docker
+    - system_promtail
+    - ansible-role-oh-my-zsh
+    - ansible-node-exporter
+    - custom-oh-my-zsh
+    - docker-swag
+    - app-archisteamfarm
+    - app-grafana
+    - app-loki
+    - app-prometheus
+    - app-uptime-kuma

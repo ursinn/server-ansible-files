@@ -1,0 +1,2 @@
+- include_tasks: "{{ role_path }}/tasks/setup.yml"
+  when: "app_uptime_kuma_enabled|bool"

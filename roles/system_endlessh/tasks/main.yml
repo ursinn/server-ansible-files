@@ -1,0 +1,2 @@
+- include_tasks: "{{ role_path }}/tasks/setup.yml"
+  when: ansible_os_family != 'Suse'

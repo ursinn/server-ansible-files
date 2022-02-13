@@ -1,0 +1,10 @@
+---
+fail2ban_package: "fail2ban"
+fail2ban_package_state: present
+
+# Service options.
+fail2ban_service_state: started
+fail2ban_service_enabled: true
+fail2ban_restart_handler_state: restarted
+
+fail2ban_jail_local: ""

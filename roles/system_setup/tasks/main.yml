@@ -1,0 +1,9 @@
+---
+- name: Install packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - neofetch
+    - htop
+    - git

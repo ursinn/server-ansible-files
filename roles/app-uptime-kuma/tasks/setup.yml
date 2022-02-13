@@ -1,0 +1,38 @@
+---
+
+- name: Create directory
+  ansible.builtin.file:
+    path: /opt/app-uptime-kuma/data
+    state: directory
+    mode: 0755
+
+- name: Ensure louislam/uptime-kuma image is pulled
+  community.docker.docker_image:
+    name: docker.io/louislam/uptime-kuma
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove uptime-kuma container
+  community.docker.docker_container:
+    name: uptime-kuma
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on uptime-kuma container
+  community.docker.docker_container_info:
+    name: uptime-kuma
+  register: result
+
+- name: Create uptime-kuma container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=uptime-kuma \
+    -v /opt/app-uptime-kuma/data:/app/data:Z \
+    --network=swag-network \
+    --restart unless-stopped \
+    docker.io/louislam/uptime-kuma
+  when:
+    pulled.changed
+    or
+    result.exists == false
