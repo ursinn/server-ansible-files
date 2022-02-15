@@ -1,0 +1,37 @@
+---
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/app-owncloud/data
+    state: directory
+    mode: 0755
+
+- name: Ensure bitnami/owncloud image is pulled
+  community.docker.docker_image:
+    name: docker.io/bitnami/owncloud
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove owncloud container
+  community.docker.docker_container:
+    name: owncloud
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on owncloud container
+  community.docker.docker_container_info:
+    name: owncloud
+  register: result
+
+- name: Create owncloud container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=owncloud \
+    -v /opt/app-owncloud/data:/bitnami/owncloud:Z \
+    --network=swag-network \
+    --restart unless-stopped \
+    docker.io/bitnami/owncloud
+  when: 
+    pulled.changed
+    or
+    result.exists == false
