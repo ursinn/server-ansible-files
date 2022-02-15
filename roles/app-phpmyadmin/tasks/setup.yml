@@ -1,0 +1,30 @@
+---
+- name: Ensure bitnami/phpmyadmin image is pulled
+  community.docker.docker_image:
+    name: docker.io/bitnami/phpmyadmin
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove phpmyadmin container
+  community.docker.docker_container:
+    name: phpmyadmin
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on phpmyadmin container
+  community.docker.docker_container_info:
+    name: phpmyadmin
+  register: result
+
+- name: Create phpmyadmin container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=phpmyadmin \
+    --network=swag-network \
+    --restart unless-stopped \
+    docker.io/bitnami/phpmyadmin
+  when: 
+    pulled.changed
+    or
+    result.exists == false
