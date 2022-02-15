@@ -1,5 +1,4 @@
 ---
-
 - name: Create directory
   ansible.builtin.file:
     path: /opt/app-prometheus/config
