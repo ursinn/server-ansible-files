@@ -1,0 +1,37 @@
+---
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/app-sonarqube/data
+    state: directory
+    mode: 0755
+
+- name: Ensure bitnami/sonarqube image is pulled
+  community.docker.docker_image:
+    name: docker.io/bitnami/sonarqube
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove sonarqube container
+  community.docker.docker_container:
+    name: sonarqube
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on sonarqube container
+  community.docker.docker_container_info:
+    name: sonarqube
+  register: result
+
+- name: Create sonarqube container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=sonarqube \
+    -v /opt/app-sonarqube/data:/bitnami/sonarqube:Z \
+    --network=swag-network \
+    --restart unless-stopped \
+    docker.io/bitnami/sonarqube
+  when: 
+    pulled.changed
+    or
+    result.exists == false
