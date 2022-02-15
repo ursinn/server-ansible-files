@@ -1,0 +1,37 @@
+---
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/app-jenkins/data
+    state: directory
+    mode: 0755
+
+- name: Ensure bitnami/jenkins image is pulled
+  community.docker.docker_image:
+    name: docker.io/bitnami/jenkins
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove jenkins container
+  community.docker.docker_container:
+    name: jenkins
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on jenkins container
+  community.docker.docker_container_info:
+    name: jenkins
+  register: result
+
+- name: Create jenkins container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=jenkins \
+    -v /opt/app-jenkins/data:/bitnami/jenkins:Z \
+    --network=swag-network \
+    --restart unless-stopped \
+    docker.io/bitnami/jenkins
+  when: 
+    pulled.changed
+    or
+    result.exists == false
