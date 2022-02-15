@@ -1,5 +1,4 @@
 ---
-
 - name: Ensure grafana/grafana-enterprise image is pulled
   community.docker.docker_image:
     name: docker.io/grafana/grafana-enterprise
