@@ -1,0 +1,30 @@
+---
+- name: Ensure bitnami/keycloak image is pulled
+  community.docker.docker_image:
+    name: docker.io/bitnami/keycloak
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove keycloak container
+  community.docker.docker_container:
+    name: keycloak
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on keycloak container
+  community.docker.docker_container_info:
+    name: keycloak
+  register: result
+
+- name: Create keycloak container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=keycloak \
+    --network=swag-network \
+    --restart unless-stopped \
+    docker.io/bitnami/keycloak
+  when: 
+    pulled.changed
+    or
+    result.exists == false
