@@ -1,0 +1,40 @@
+---
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/app-hedgedoc/config
+    state: directory
+    mode: 0755
+
+- name: Ensure linuxserver/hedgedoc image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/hedgedoc
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove hedgedoc container
+  community.docker.docker_container:
+    name: hedgedoc
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on hedgedoc container
+  community.docker.docker_container_info:
+    name: hedgedoc
+  register: result
+
+- name: Create hedgedoc container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=hedgedoc \
+    -e PUID=1000 \
+    -e PGID=1000 \
+    -e TZ=Europe/Zurich \
+    -v /opt/app-hedgedoc/config:/config:Z \
+    --network=swag-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/hedgedoc
+  when: 
+    pulled.changed
+    or
+    result.exists == false
