@@ -1,0 +1,40 @@
+---
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/app-heimdall/config
+    state: directory
+    mode: 0755
+
+- name: Ensure bitnami/heimdall image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/heimdall
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove heimdall container
+  community.docker.docker_container:
+    name: heimdall
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on heimdall container
+  community.docker.docker_container_info:
+    name: heimdall
+  register: result
+
+- name: Create heimdall container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=heimdall \
+    -e PUID=1000 \
+    -e PGID=1000 \
+    -e TZ=Europe/Zurich \
+    -v /opt/app-heimdall/config:/config:Z \
+    --network=swag-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/heimdall
+  when: 
+    pulled.changed
+    or
+    result.exists == false
