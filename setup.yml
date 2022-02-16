@@ -17,10 +17,29 @@
     - system_promtail
     - ansible-role-oh-my-zsh
     - ansible-node-exporter
+    # Customize
     - custom-oh-my-zsh
+    # Docker App Helper
+#    - docker-postgresql
+#    - docker-redis
     - docker-swag
+    # Apps
     - app-archisteamfarm
+#    - app-discourse
+    - app-endlessh
+#    - app-gitea
     - app-grafana
+#    - app-hastebin
+#    - app-hedgedoc
+    - app-heimdall
+    - app-jenkins
+#    - app-keycloak
     - app-loki
+    - app-nextcloud
+#    - app-owncloud
+#    - app-phpmyadmin
+#    - app-pihole
+#    - app-privatebin
     - app-prometheus
+#    - app-sonarqube
     - app-uptime-kuma
