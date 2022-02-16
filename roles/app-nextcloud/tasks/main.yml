@@ -1,0 +1,3 @@
+---
+- include_tasks: "{{ role_path }}/tasks/setup.yml"
+  when: "app_nextcloud_enabled|bool"
