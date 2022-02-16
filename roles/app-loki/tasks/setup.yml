@@ -1,5 +1,5 @@
 ---
-- name: Create directorys
+- name: Create config directory
   ansible.builtin.file:
     path: /opt/app-loki/config
     state: directory
