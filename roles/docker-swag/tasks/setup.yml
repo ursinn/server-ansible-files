@@ -3,7 +3,7 @@
   community.docker.docker_network:
     name: swag-network
 
-- name: Create directorys
+- name: Create directory
   ansible.builtin.file:
     path: /opt/docker-swag/config/nginx/proxy-confs
     state: directory
@@ -15,11 +15,11 @@
     dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}"
     mode: 0644
   with_items:
+    - "archisteamfarm.subdomain.conf"
     - "grafana.subdomain.conf"
     - "loki.subdomain.conf"
     - "prometheus.subdomain.conf"
     - "uptime-kuma.subdomain.conf"
-    - "archisteamfarm.subdomain.conf"
 
 - name: Copy .htpasswd file
   ansible.builtin.copy:
