@@ -1,8 +1,11 @@
 app_gitea_enabled: false
-app_jenkins_enabled: false
-app_keycloak_enabled: false
-app_loki_enabled: false
 app_mastedon_enabled: false
+
+app_hedgedoc_enabled: false
+app_keycloak_enabled: false
+app_owncloud_enabled: false
+app_phpmyadmin_enabled: false
+app_sonarqube_enabled: false
 
 ###
 # Docker
@@ -23,32 +26,6 @@ oh_my_zsh_users: []
 # PIP
 pip_install_packages: []
 
-# ArchiSteamFarm
-app_archisteamfarm_enabled: false
-
-# Grafan
-app_grafan_enabled: false
-
-# Loki
-app_loki_enabled: false
-
-# Prometheus
-app_prometheus_enabled: false
-app_prometheus_prometheus_username: ""
-app_prometheus_prometheus_password: ""
-app_prometheus_prometheus_urls: []
-app_prometheus_grafana_username: ""
-app_prometheus_grafana_password: ""
-app_prometheus_grafana_urls: []
-app_prometheus_loki_username: ""
-app_prometheus_loki_password: ""
-app_prometheus_loki_urls: []
-app_prometheus_promtail_urls: []
-app_prometheus_node_exporter_urls: []
-
-# Uptime Kuma
-app_uptime_kuma_enabled: false
-
 # Docker Swag
 docker_swag_htpasswd: ""
 
@@ -66,3 +43,41 @@ ssh_user_key: ""
 
 ### Required on OpenSUSE
 docker_package: "docker"
+
+# ArchiSteamFarm
+app_archisteamfarm_enabled: false
+
+# Endlessh
+app_endlessh_enabled: false
+
+# Grafan
+app_grafan_enabled: false
+
+# Heimdall
+app_heimdall_enabled: false
+
+# Jenkins
+app_jenkins_enabled: false
+
+# Loki
+app_loki_enabled: false
+
+# Nextcloud
+app_nextcloud_enabled: false
+
+# Prometheus
+app_prometheus_enabled: false
+app_prometheus_prometheus_username: ""
+app_prometheus_prometheus_password: ""
+app_prometheus_prometheus_urls: []
+app_prometheus_grafana_username: ""
+app_prometheus_grafana_password: ""
+app_prometheus_grafana_urls: []
+app_prometheus_loki_username: ""
+app_prometheus_loki_password: ""
+app_prometheus_loki_urls: []
+app_prometheus_promtail_urls: []
+app_prometheus_node_exporter_urls: []
+
+# Uptime Kuma
+app_uptime_kuma_enabled: false
