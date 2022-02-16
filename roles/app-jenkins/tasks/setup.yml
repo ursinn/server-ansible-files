@@ -1,5 +1,5 @@
 ---
-- name: Create directorys
+- name: Create data directory
   ansible.builtin.file:
     path: /opt/app-jenkins/data
     state: directory
