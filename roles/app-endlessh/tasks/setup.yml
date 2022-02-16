@@ -1,0 +1,40 @@
+---
+- name: Create config directory
+  ansible.builtin.file:
+    path: /opt/app-endlessh/config
+    state: directory
+    mode: 0755
+
+- name: Ensure linuxserver/endlessh image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/endlessh
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove endlessh container
+  community.docker.docker_container:
+    name: endlessh
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on endlessh container
+  community.docker.docker_container_info:
+    name: endlessh
+  register: result
+
+- name: Create endlessh container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=endlessh \
+    -e PUID=1000 \
+    -e PGID=1000 \
+    -e TZ=Europe/Zurich \
+    -v /opt/app-endlessh/config:/config:Z \
+    -p 2222:2222 \
+    --restart unless-stopped \
+    lscr.io/linuxserver/endlessh
+  when: 
+    pulled.changed
+    or
+    result.exists == false
