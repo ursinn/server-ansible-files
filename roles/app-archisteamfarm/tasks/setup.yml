@@ -1,12 +1,15 @@
 ---
-- name: Create directorys
+- name: Create config directory
   ansible.builtin.file:
-    path: "{{ item }}"
+    path: /opt/app-archisteamfarm/config
     state: directory
     mode: 0755
-  with_items:
-    - "/opt/app-archisteamfarm/config"
-    - "/opt/app-archisteamfarm/plugins"
+
+- name: Create plugins directory
+  ansible.builtin.file:
+    path: /opt/app-nextcloud/plugins
+    state: directory
+    mode: 0755
 
 - name: Ensure justarchi/archisteamfarm image is pulled
   community.docker.docker_image:
