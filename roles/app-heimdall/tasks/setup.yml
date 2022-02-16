@@ -1,11 +1,11 @@
 ---
-- name: Create directorys
+- name: Create config directory
   ansible.builtin.file:
     path: /opt/app-heimdall/config
     state: directory
     mode: 0755
 
-- name: Ensure bitnami/heimdall image is pulled
+- name: Ensure linuxserver/heimdall image is pulled
   community.docker.docker_image:
     name: lscr.io/linuxserver/heimdall
     source: pull
