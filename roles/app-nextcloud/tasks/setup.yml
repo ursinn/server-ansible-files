@@ -3,16 +3,16 @@
   ansible.builtin.file:
     path: /opt/app-nextcloud/config
     state: directory
-    owner: 16704
-    group: 16704
+    owner: '16704'
+    group: '16704'
     mode: 0755
 
 - name: Create data directory
   ansible.builtin.file:
     path: /opt/app-nextcloud/data
     state: directory
-    owner: 16704
-    group: 16704
+    owner: '16704'
+    group: '16704'
     mode: 0755
 
 - name: Ensure linuxserver/nextcloud image is pulled
