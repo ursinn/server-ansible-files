@@ -3,12 +3,16 @@
   ansible.builtin.file:
     path: /opt/app-nextcloud/config
     state: directory
+    owner: 16704
+    group: 16704
     mode: 0755
 
 - name: Create data directory
   ansible.builtin.file:
     path: /opt/app-nextcloud/data
     state: directory
+    owner: 16704
+    group: 16704
     mode: 0755
 
 - name: Ensure linuxserver/nextcloud image is pulled
@@ -33,8 +37,8 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=nextcloud \
-    -e PUID=1000 \
-    -e PGID=1000 \
+    -e PUID=16704 \
+    -e PGID=16704 \
     -e TZ=Europe/Zurich \
     -v /opt/app-nextcloud/config:/config:Z \
     -v /opt/app-nextcloud/data:/data:Z \
