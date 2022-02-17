@@ -3,8 +3,8 @@
   ansible.builtin.file:
     path: /opt/app-endlessh/config
     state: directory
-    owner: 16704
-    group: 16704
+    owner: '16704'
+    group: '16704'
     mode: 0755
 
 - name: Ensure linuxserver/endlessh image is pulled
