@@ -1,0 +1,40 @@
+---
+- name: Create data directory
+  ansible.builtin.file:
+    path: /opt/app-pihole/data
+    state: directory
+    mode: 0755
+
+- name: Ensure pihole/pihole image is pulled
+  community.docker.docker_image:
+    name: docker.io/pihole/pihole
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove pihole container
+  community.docker.docker_container:
+    name: pihole
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on pihole container
+  community.docker.docker_container_info:
+    name: pihole
+  register: result
+
+- name: Create pihole container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=pihole \
+    --cap-add=NET_ADMIN \
+    -e TZ=Europe/Zurich \
+    -v /opt/app-pihole/data:/etc/pihole:Z \
+    -p 53:53 \
+    --network=swag-network \
+    --restart unless-stopped \
+    docker.io/pihole/pihole
+  when: 
+    pulled.changed
+    or
+    result.exists == false
