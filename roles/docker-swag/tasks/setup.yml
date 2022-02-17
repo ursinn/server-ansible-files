@@ -7,16 +7,16 @@
   ansible.builtin.file:
     path: /opt/docker-swag/config/nginx/proxy-confs
     state: directory
-    owner: 16704
-    group: 16704
+    owner: '16704'
+    group: '16704'
     mode: 0755
 
 - name: Copy files
   ansible.builtin.copy:
     src: "{{ item }}"
     dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}"
-    owner: 16704
-    group: 16704
+    owner: '16704'
+    group: '16704'
     mode: 0644
   with_items:
     - "archisteamfarm.subdomain.conf"
@@ -32,8 +32,8 @@
   ansible.builtin.copy:
     content: "{{ docker_swag_htpasswd }}"
     dest: /opt/docker-swag/config/nginx/.htpasswd
-    owner: 16704
-    group: 16704
+    owner: '16704'
+    group: '16704'
     mode: 0644
 
 - name: Ensure linuxserver/swag image is pulled
