@@ -1,16 +1,8 @@
-app_gitea_enabled: false
-app_mastedon_enabled: false
-
-app_hedgedoc_enabled: false
-app_keycloak_enabled: false
-app_owncloud_enabled: false
-app_phpmyadmin_enabled: false
-app_sonarqube_enabled: false
-
-###
 # Docker
 docker_users: []
 docker_daemon_options: {}
+## Required on OpenSUSE
+docker_package: "docker"
 
 # Firewall
 firewall_disable_firewalld: true
@@ -26,23 +18,16 @@ oh_my_zsh_users: []
 # PIP
 pip_install_packages: []
 
-# Docker Swag
-docker_swag_htpasswd: ""
+###
+app_gitea_enabled: false
+app_mastedon_enabled: false
 
-# Fail2ban
-fail2ban_jail_local: ""
-
-# Promtail
-promtail_loki_url: ""
-promtail_loki_username: ""
-promtail_loki_password: ""
-
-# SSH
-ssh_user: ""
-ssh_user_key: ""
-
-### Required on OpenSUSE
-docker_package: "docker"
+app_hedgedoc_enabled: false
+app_keycloak_enabled: false
+app_owncloud_enabled: false
+app_phpmyadmin_enabled: false
+app_sonarqube_enabled: false
+###
 
 # ArchiSteamFarm
 app_archisteamfarm_enabled: false
@@ -65,6 +50,9 @@ app_loki_enabled: false
 # Nextcloud
 app_nextcloud_enabled: false
 
+# Pi-Hole
+app_pihole_enabled: false
+
 # Prometheus
 app_prometheus_enabled: false
 app_prometheus_prometheus_username: ""
@@ -81,3 +69,18 @@ app_prometheus_node_exporter_urls: []
 
 # Uptime Kuma
 app_uptime_kuma_enabled: false
+
+# Docker Swag
+docker_swag_htpasswd: ""
+
+# Fail2ban
+fail2ban_jail_local: ""
+
+# Promtail
+promtail_loki_url: ""
+promtail_loki_username: ""
+promtail_loki_password: ""
+
+# SSH
+ssh_user: ""
+ssh_user_key: ""
