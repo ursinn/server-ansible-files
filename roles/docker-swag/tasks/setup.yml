@@ -17,7 +17,10 @@
   with_items:
     - "archisteamfarm.subdomain.conf"
     - "grafana.subdomain.conf"
+    - "heimdall.subdomain.conf"
+    - "jenkins.subdomain.conf"
     - "loki.subdomain.conf"
+    - "nextcloud.subdomain.conf"
     - "prometheus.subdomain.conf"
     - "uptime-kuma.subdomain.conf"
 
@@ -54,8 +57,9 @@
     -e PGID=1000 \
     -e TZ=Europe/Zurich \
     -e URL=app.crazycraftland.info \
-    -e VALIDATION=http \
-    -e SUBDOMAINS=grafana,loki,prometheus,uptime-kuma \
+    -e SUBDOMAINS=wildcard \
+    -e VALIDATION=dns \
+    -e DNSPLUGIN=cloudflare \
     -e ONLY_SUBDOMAINS=true \
     -v /opt/docker-swag/config:/config:Z \
     -p 443:443 \
