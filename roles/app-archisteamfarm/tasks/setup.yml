@@ -3,16 +3,16 @@
   ansible.builtin.file:
     path: /opt/app-archisteamfarm/config
     state: directory
-    user: 1000
-    group: 1000
+    user: '1000'
+    group: '1000'
     mode: 0755
 
 - name: Create plugins directory
   ansible.builtin.file:
     path: /opt/app-archisteamfarm/plugins
     state: directory
-    user: 1000
-    group: 1000
+    user: '1000'
+    group: '1000'
     mode: 0755
 
 - name: Ensure justarchi/archisteamfarm image is pulled
