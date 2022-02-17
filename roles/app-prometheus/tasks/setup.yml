@@ -3,12 +3,16 @@
   ansible.builtin.file:
     path: /opt/app-prometheus/config
     state: directory
+    owner: nobody
+    group: nobody
     mode: 0755
 
 - name: Copy prometheus file
   ansible.builtin.template:
     src: prometheus.yml.j2
     dest: /opt/app-prometheus/config/prometheus.yml
+    owner: nobody
+    group: nobody
     mode: 0644
 
 - name: Ensure prom/prometheus image is pulled
