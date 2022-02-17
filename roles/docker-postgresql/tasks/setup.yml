@@ -1,0 +1,49 @@
+---
+- name: Create postgresql network
+  community.docker.docker_network:
+    name: postgresql-network
+
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/docker-postgresql/data
+    state: directory
+    mode: 0755
+
+- name: Ensure bitnami/postgresql image is pulled
+  community.docker.docker_image:
+    name: docker.io/bitnami/postgresql
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove postgresql container
+  community.docker.docker_container:
+    name: postgresql
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on postgresql container
+  community.docker.docker_container_info:
+    name: postgresql
+  register: result
+
+- name: Create postgresql container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=postgresql \
+    -v /opt/docker-postgresql/data:/bitnami/postgresql:Z \
+    --network=postgresql-network \
+    --restart unless-stopped \
+    docker.io/bitnami/postgresql
+  when:
+    pulled.changed
+    or
+    result.exists == false
+
+- name: Add postgresql container to bridge network
+  ansible.builtin.shell:
+    cmd: "docker network connect bridge postgresql"
+  when:
+    pulled.changed
+    or
+    result.exists == false
