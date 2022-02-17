@@ -1,0 +1,50 @@
+---
+- name: Create redis network
+  community.docker.docker_network:
+    name: redis-network
+
+- name: Create directorys
+  ansible.builtin.file:
+    path: /opt/docker-redis/data
+    state: directory
+    mode: 0755
+
+- name: Ensure bitnami/redis image is pulled
+  community.docker.docker_image:
+    name: docker.io/bitnami/redis
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove redis container
+  community.docker.docker_container:
+    name: redis
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on redis container
+  community.docker.docker_container_info:
+    name: redis
+  register: result
+
+- name: Create postgresql container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=redis \
+    -v /opt/docker-redis/data:/bitnami/redis/data:Z \
+    -p 5432:5432 \
+    --network=redis-network \
+    --restart unless-stopped \
+    docker.io/bitnami/redis
+  when:
+    pulled.changed
+    or
+    result.exists == false
+
+- name: Add redis container to bridge network
+  ansible.builtin.shell:
+    cmd: "docker network connect bridge redis"
+  when:
+    pulled.changed
+    or
+    result.exists == false
