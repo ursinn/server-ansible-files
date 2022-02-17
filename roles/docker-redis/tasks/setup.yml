@@ -32,7 +32,6 @@
     docker run -d \
     --name=redis \
     -v /opt/docker-redis/data:/bitnami/redis/data:Z \
-    -p 5432:5432 \
     --network=redis-network \
     --restart unless-stopped \
     docker.io/bitnami/redis
