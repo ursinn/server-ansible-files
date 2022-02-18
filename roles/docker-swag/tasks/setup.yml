@@ -13,7 +13,7 @@
 
 - name: Copy files
   ansible.builtin.copy:
-    src: "{{ item }}"
+    src: "{{ item }}.subdomain.conf"
     dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}.subdomain.conf"
     owner: "{{docker_swag_puid}}"
     group: "{{docker_swag_guid}}
