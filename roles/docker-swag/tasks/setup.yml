@@ -8,7 +8,7 @@
     path: /opt/docker-swag/config/nginx/proxy-confs
     state: directory
     owner: "{{docker_swag_puid}}"
-    group: "{{docker_swag_guid}}"
+    group: "{{docker_swag_pgid}}"
     mode: 0755
 
 - name: Copy files
@@ -16,7 +16,7 @@
     src: "{{ item }}.subdomain.conf"
     dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}.subdomain.conf"
     owner: "{{docker_swag_puid}}"
-    group: "{{docker_swag_guid}}"
+    group: "{{docker_swag_pgid}}"
     mode: 0644
   with_items:
     - "archisteamfarm"
@@ -39,7 +39,7 @@
     content: "{{ docker_swag_htpasswd }}"
     dest: /opt/docker-swag/config/nginx/.htpasswd
     owner: "{{docker_swag_puid}}"
-    group: "{{docker_swag_guid}}"
+    group: "{{docker_swag_pgid}}"
     mode: 0644
 
 - name: Ensure linuxserver/swag image is pulled
@@ -66,7 +66,7 @@
     --name=swag \
     --cap-add=NET_ADMIN \
     -e PUID={{docker_swag_puid}} \
-    -e PGID={{docker_swag_guid}} \
+    -e PGID={{docker_swag_pgid}} \
     -e TZ=Europe/Zurich \
     -e URL={{docker_swag_url}} \
     -e SUBDOMAINS=wildcard \
