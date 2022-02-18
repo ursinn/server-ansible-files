@@ -3,8 +3,8 @@
   ansible.builtin.file:
     path: /opt/app-heimdall/config
     state: directory
-    owner: '16704'
-    group: '16704'
+    owner: "{{app_heimdall_puid}}"
+    group: "{{app_heimdall_pgid}}"
     mode: 0755
 
 - name: Ensure linuxserver/heimdall image is pulled
@@ -29,8 +29,8 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=heimdall \
-    -e PUID=16704 \
-    -e PGID=16704 \
+    -e PUID={{app_heimdall_puid}} \
+    -e PGID={{app_heimdall_pgid}} \
     -e TZ=Europe/Zurich \
     -v /opt/app-heimdall/config:/config:Z \
     --network=swag-network \
