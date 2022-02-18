@@ -8,31 +8,31 @@
     path: /opt/docker-swag/config/nginx/proxy-confs
     state: directory
     owner: "{{docker_swag_puid}}"
-    group: "{{docker_swag_guid}}
+    group: "{{docker_swag_guid}}"
     mode: 0755
 
 - name: Copy files
   ansible.builtin.copy:
-    src: "{{ item }}"
-    dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}"
+    src: "{{ item }}.subdomain.conf"
+    dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}.subdomain.conf"
     owner: "{{docker_swag_puid}}"
-    group: "{{docker_swag_guid}}
+    group: "{{docker_swag_guid}}"
     mode: 0644
   with_items:
-    - "archisteamfarm.subdomain.conf"
-    - "dokuwiki.subdomain.conf"
-    - "duplicati.subdomain.conf"
-    - "gitea.subdomain.conf"
-    - "grafana.subdomain.conf"
-    - "heimdall.subdomain.conf"
-    - "homer.subdomain.conf"
-    - "jenkins.subdomain.conf"
-    - "loki.subdomain.conf"
-    - "nextcloud.subdomain.conf"
-    - "plex.subdomain.conf"
-    - "privatebin.subdomain.conf"
-    - "prometheus.subdomain.conf"
-    - "uptime-kuma.subdomain.conf"
+    - "archisteamfarm"
+    - "dokuwiki"
+    - "duplicati"
+    - "gitea"
+    - "grafana"
+    - "heimdall"
+    - "homer"
+    - "jenkins"
+    - "loki"
+    - "nextcloud"
+    - "plex"
+    - "privatebin"
+    - "prometheus"
+    - "uptime-kuma"
 
 - name: Copy .htpasswd file
   ansible.builtin.copy:
