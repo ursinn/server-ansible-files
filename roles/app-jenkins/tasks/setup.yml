@@ -29,6 +29,9 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=jenkins \
+    -e JENKINS_USERNAME={{app_jenkins_username}}
+    -e JENKINS_PASSWORD={{app_jenkins_password}}
+    -e JENKINS_EMAIL={{app_jenkins_email}}
     -v /opt/app-jenkins/data:/bitnami/jenkins:Z \
     --network=swag-network \
     --restart unless-stopped \
