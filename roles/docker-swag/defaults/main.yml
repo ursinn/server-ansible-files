@@ -1,5 +1,8 @@
 ---
 docker_swag_htpasswd: ""
+docker_swag_url: ""
+docker_swag_puid: '16704'
+docker_swag_guid: '16704'
 
 app_archisteamfarm_enabled: false
 app_grafan_enabled: false

@@ -7,33 +7,39 @@
   ansible.builtin.file:
     path: /opt/docker-swag/config/nginx/proxy-confs
     state: directory
-    owner: '16704'
-    group: '16704'
+    owner: "{{docker_swag_puid}}"
+    group: "{{docker_swag_guid}}
     mode: 0755
 
 - name: Copy files
   ansible.builtin.copy:
     src: "{{ item }}"
-    dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}"
-    owner: '16704'
-    group: '16704'
+    dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}.subdomain.conf"
+    owner: "{{docker_swag_puid}}"
+    group: "{{docker_swag_guid}}
     mode: 0644
   with_items:
-    - "archisteamfarm.subdomain.conf"
-    - "grafana.subdomain.conf"
-    - "heimdall.subdomain.conf"
-    - "jenkins.subdomain.conf"
-    - "loki.subdomain.conf"
-    - "nextcloud.subdomain.conf"
-    - "prometheus.subdomain.conf"
-    - "uptime-kuma.subdomain.conf"
+    - "archisteamfarm"
+    - "dokuwiki"
+    - "duplicati"
+    - "gitea"
+    - "grafana"
+    - "heimdall"
+    - "homer"
+    - "jenkins"
+    - "loki"
+    - "nextcloud"
+    - "plex"
+    - "privatebin"
+    - "prometheus"
+    - "uptime-kuma"
 
 - name: Copy .htpasswd file
   ansible.builtin.copy:
     content: "{{ docker_swag_htpasswd }}"
     dest: /opt/docker-swag/config/nginx/.htpasswd
-    owner: '16704'
-    group: '16704'
+    owner: "{{docker_swag_puid}}"
+    group: "{{docker_swag_guid}}"
     mode: 0644
 
 - name: Ensure linuxserver/swag image is pulled
@@ -59,10 +65,10 @@
     docker run -d \
     --name=swag \
     --cap-add=NET_ADMIN \
-    -e PUID=16704 \
-    -e PGID=16704 \
+    -e PUID={{docker_swag_puid}} \
+    -e PGID={{docker_swag_guid}} \
     -e TZ=Europe/Zurich \
-    -e URL=app.crazycraftland.info \
+    -e URL={{docker_swag_url}} \
     -e SUBDOMAINS=wildcard \
     -e VALIDATION=dns \
     -e DNSPLUGIN=cloudflare \
