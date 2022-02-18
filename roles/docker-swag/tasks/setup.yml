@@ -13,26 +13,26 @@
 
 - name: Copy files
   ansible.builtin.copy:
-    src: "{{ item }}.subdomain.conf"
-    dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}.subdomain.conf"
+    src: "{{ item }}"
+    dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}"
     owner: "{{docker_swag_puid}}"
     group: "{{docker_swag_guid}}
     mode: 0644
   with_items:
-    - "archisteamfarm"
-    - "dokuwiki"
-    - "duplicati"
-    - "gitea"
-    - "grafana"
-    - "heimdall"
-    - "homer"
-    - "jenkins"
-    - "loki"
-    - "nextcloud"
-    - "plex"
-    - "privatebin"
-    - "prometheus"
-    - "uptime-kuma"
+    - "archisteamfarm.subdomain.conf"
+    - "dokuwiki.subdomain.conf"
+    - "duplicati.subdomain.conf"
+    - "gitea.subdomain.conf"
+    - "grafana.subdomain.conf"
+    - "heimdall.subdomain.conf"
+    - "homer.subdomain.conf"
+    - "jenkins.subdomain.conf"
+    - "loki.subdomain.conf"
+    - "nextcloud.subdomain.conf"
+    - "plex.subdomain.conf"
+    - "privatebin.subdomain.conf"
+    - "prometheus.subdomain.conf"
+    - "uptime-kuma.subdomain.conf"
 
 - name: Copy .htpasswd file
   ansible.builtin.copy:
