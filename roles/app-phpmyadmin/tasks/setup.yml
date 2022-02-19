@@ -21,10 +21,45 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=phpmyadmin \
+    -e PHPMYADMIN_ALLOW_ARBITRARY_SERVER={{app_phpmyadmin_phpmyadmin_allow_arbitrary_server}} \
+    -e PHPMYADMIN_ALLOW_REMOTE_CONNECTIONS={{app_phpmyadmin_phpmyadmin_allow_remote_connections}} \
+    -e PHPMYADMIN_ABSOLUTE_URI={{app_phpmyadmin_phpmyadmin_absolute_uri}} \
+    -e DATABASE_ALLOW_NO_PASSWORD={{app_phpmyadmin_database_allow_no_password}} \
+    -e DATABASE_HOST={{app_phpmyadmin_database_host}} \
+    -e DATABASE_PORT_NUMBER={{app_phpmyadmin_database_port_number}} \
+    -e DATABASE_ENABLE_SSL={{app_phpmyadmin_database_enable_ssl}} \
+    -e DATABASE_SSL_KEY={{app_phpmyadmin_database_ssl_key}} \
+    -e DATABASE_SSL_CERT={{app_phpmyadmin_database_ssl_cert}} \
+    -e DATABASE_SSL_CA={{app_phpmyadmin_database_ssl_ca}} \
+    -e DATABASE_SSL_CA_PATH={{app_phpmyadmin_database_ssl_ca_path}} \
+    -e DATABASE_SSL_CIPHERS={{app_phpmyadmin_database_ssl_ciphers}} \
+    -e DATABASE_SSL_VERIFY={{app_phpmyadmin_database_ssl_verify}} \
+    -e CONFIGURATION_STORAGE_ENABLE={{app_phpmyadmin_configuration_storage_enable}} \
+    -e CONFIGURATION_STORAGE_DB_USER ={{app_phpmyadmin_configuration_storage_db_user}} \
+    -e CONFIGURATION_STORAGE_DB_PASSWORD={{app_phpmyadmin_configuration_storage_db_password}} \
+    -e CONFIGURATION_STORAGE_DB_HOST={{app_phpmyadmin_configuration_storage_db_host}} \
+    -e CONFIGURATION_STORAGE_DB_PORT_NUMBER={{app_phpmyadmin_configuration_storage_db_port_number}} \
+    -e CONFIGURATION_STORAGE_DB_NAME={{app_phpmyadmin_configuration_storage_db_name}} \
+    -e PHP_ENABLE_OPCACHE={{app_phpmyadmin_php_enable_opcache}} \
+    -e PHP_EXPOSE_PHP={{app_phpmyadmin_php_expose_php}} \
+    -e PHP_MAX_EXECUTION_TIME={{app_phpmyadmin_php_max_execution_time}} \
+    -e PHP_MAX_INPUT_TIME={{app_phpmyadmin_php_max_input_time}} \
+    -e PHP_MAX_INPUT_VARS={{app_phpmyadmin_php_max_input_vars}} \
+    -e PHP_MEMORY_LIMIT={{app_phpmyadmin_php_memory_limit}} \
+    -e PHP_POST_MAX_SIZE={{app_phpmyadmin_php_post_max_size}} \
+    -e PHP_UPLOAD_MAX_FILESIZE={{app_phpmyadmin_php_upload_max_filesize}} \
     --network=swag-network \
     --restart unless-stopped \
     docker.io/bitnami/phpmyadmin
   when: 
+    pulled.changed
+    or
+    result.exists == false
+
+- name: Add phpmyadmin container to postgresql-network network
+  ansible.builtin.shell:
+    cmd: "docker network connect postgresql-network phpmyadmin"
+  when:
     pulled.changed
     or
     result.exists == false
