@@ -9,6 +9,7 @@
     state: directory
     owner: "{{docker_swag_puid}}"
     group: "{{docker_swag_pgid}}"
+    force: "{{docker_swag_force}}"
     mode: 0755
 
 - name: Copy files
@@ -28,6 +29,7 @@
     - "heimdall"
     - "homer"
     - "jenkins"
+    - "keycloak"
     - "loki"
     - "nextcloud"
     - "phpmyadmin"
