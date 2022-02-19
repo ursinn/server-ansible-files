@@ -20,12 +20,11 @@
     # Customize
     - custom-oh-my-zsh
     # Docker App Helper
-#    - docker-postgresql
+    - docker-postgresql
 #    - docker-redis
     - docker-swag
     # Apps
     - app-archisteamfarm
-#    - app-discourse
     - app-endlessh
 #    - app-gitea
     - app-grafana
@@ -37,8 +36,8 @@
     - app-loki
     - app-nextcloud
 #    - app-owncloud
-#    - app-phpmyadmin
-#    - app-pihole
+    - app-phpmyadmin
+    - app-pihole
 #    - app-privatebin
     - app-prometheus
 #    - app-sonarqube
