@@ -32,7 +32,7 @@
 #    - app-hedgedoc
     - app-heimdall
     - app-jenkins
-#    - app-keycloak
+    - app-keycloak
     - app-loki
     - app-nextcloud
 #    - app-owncloud
