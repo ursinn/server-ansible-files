@@ -1,7 +1,7 @@
 ---
-- name: Create postgresql network
+- name: Create app network
   community.docker.docker_network:
-    name: postgresql-network
+    name: app-network
 
 - name: Create directorys
   ansible.builtin.file:
@@ -53,17 +53,9 @@
     -e POSTGRESQL_TCP_KEEPALIVES_COUNT={{docker_postgresql_tcp_keepalives_count}} \
     -e POSTGRESQL_TIMEZONE={{docker_postgresql_timezone}} \
     -v /opt/docker-postgresql/data:/bitnami/postgresql:Z \
-    --network=postgresql-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/bitnami/postgresql
-  when:
-    pulled.changed
-    or
-    result.exists == false
-
-- name: Add postgresql container to bridge network
-  ansible.builtin.shell:
-    cmd: "docker network connect bridge postgresql"
   when:
     pulled.changed
     or
