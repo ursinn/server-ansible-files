@@ -2,3 +2,4 @@
 app_heimdall_enabled: false
 app_heimdall_puid: '16704'
 app_heimdall_pgid: '16704'
+app_heimdall_tz: "Europe/Zurich"

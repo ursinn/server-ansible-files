@@ -31,7 +31,7 @@
     --name=heimdall \
     -e PUID={{app_heimdall_puid}} \
     -e PGID={{app_heimdall_pgid}} \
-    -e TZ=Europe/Zurich \
+    -e TZ={{app_heimdall_tz}} \
     -v /opt/app-heimdall/config:/config:Z \
     --network=app-network \
     --restart unless-stopped \
