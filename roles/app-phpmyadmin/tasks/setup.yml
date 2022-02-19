@@ -48,18 +48,10 @@
     -e PHP_MEMORY_LIMIT={{app_phpmyadmin_php_memory_limit}} \
     -e PHP_POST_MAX_SIZE={{app_phpmyadmin_php_post_max_size}} \
     -e PHP_UPLOAD_MAX_FILESIZE={{app_phpmyadmin_php_upload_max_filesize}} \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/bitnami/phpmyadmin
   when: 
-    pulled.changed
-    or
-    result.exists == false
-
-- name: Add phpmyadmin container to postgresql-network network
-  ansible.builtin.shell:
-    cmd: "docker network connect postgresql-network phpmyadmin"
-  when:
     pulled.changed
     or
     result.exists == false
