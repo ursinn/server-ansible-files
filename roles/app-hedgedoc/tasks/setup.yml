@@ -1,8 +1,10 @@
 ---
-- name: Create directorys
+- name: Create config directory
   ansible.builtin.file:
     path: /opt/app-hedgedoc/config
     state: directory
+    owner: "{{app_hedgedoc_puid}}"
+    group: "{{app_hedgedoc_pgid}}"
     mode: 0755
 
 - name: Ensure linuxserver/hedgedoc image is pulled
@@ -27,11 +29,20 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=hedgedoc \
-    -e PUID=1000 \
-    -e PGID=1000 \
-    -e TZ=Europe/Zurich \
+    -e PUID={{app_hedgedoc_puid}} \
+    -e PGID={{app_hedgedoc_pgid}} \
+    -e DB_HOST={{app_hedgedoc_db_host}} \
+    -e DB_PORT={{app_hedgedoc_db_port}} \
+    -e DB_USER={{app_hedgedoc_db_user}} \
+    -e DB_PASS={{app_hedgedoc_db_pass}} \
+    -e DB_NAME={{app_hedgedoc_db_name}} \
+    -e TZ={{app_hedgedoc_tz}} \
+    -e CMD_DOMAIN={{app_hedgedoc_cmd_domain}} \
+    -e CMD_URL_ADDPORT={{app_hedgedoc_cmd_url_addport}} \
+    -e CMD_PROTOCOL_USESSL={{app_hedgedoc_cmd_protocol_usessl}} \
+    -e CMD_PORT={{app_hedgedoc_cmd_port}} \
     -v /opt/app-hedgedoc/config:/config:Z \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     lscr.io/linuxserver/hedgedoc
   when: 

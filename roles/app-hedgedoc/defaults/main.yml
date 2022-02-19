@@ -1,2 +1,14 @@
 ---
 app_hedgedoc_enabled: false
+app_hedgedoc_puid: '16704'
+app_hedgedoc_pgid: '16704'
+app_hedgedoc_db_host: ""
+app_hedgedoc_db_port: ''
+app_hedgedoc_db_user: "hedgedoc"
+app_hedgedoc_db_pass: ""
+app_hedgedoc_db_name: "hedgedoc"
+app_hedgedoc_tz: "Europe/Zurich"
+app_hedgedoc_cmd_domain: "localhost"
+app_hedgedoc_cmd_url_addport: true
+app_hedgedoc_cmd_protocol_usessl: false
+app_hedgedoc_cmd_port: '3000'
