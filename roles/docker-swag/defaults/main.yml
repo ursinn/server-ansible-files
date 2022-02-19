@@ -3,6 +3,7 @@ docker_swag_htpasswd: ""
 docker_swag_url: ""
 docker_swag_puid: '16704'
 docker_swag_pgid: '16704'
+docker_swag_force: "yes"
 
 app_archisteamfarm_enabled: false
 app_grafan_enabled: false
@@ -10,6 +11,7 @@ app_heimdall_enabled: false
 app_jenkins_enabled: false
 app_loki_enabled: false
 app_nextcloud_enabled: false
+app_phpmyadmin_enabled: false
 app_pihole_enabled: false
 app_prometheus_enabled: false
 app_uptime_kuma_enabled: false

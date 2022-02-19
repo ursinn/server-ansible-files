@@ -17,6 +17,7 @@
     dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}.subdomain.conf"
     owner: "{{docker_swag_puid}}"
     group: "{{docker_swag_pgid}}"
+    force: "{{docker_swag_force}}"
     mode: 0644
   with_items:
     - "archisteamfarm"
@@ -29,6 +30,8 @@
     - "jenkins"
     - "loki"
     - "nextcloud"
+    - "phpmyadmin"
+    - "pihole"
     - "plex"
     - "privatebin"
     - "prometheus"
@@ -40,6 +43,7 @@
     dest: /opt/docker-swag/config/nginx/.htpasswd
     owner: "{{docker_swag_puid}}"
     group: "{{docker_swag_pgid}}"
+    force: "{{docker_swag_force}}"
     mode: 0644
 
 - name: Ensure linuxserver/swag image is pulled
