@@ -33,6 +33,25 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=postgresql \
+    - ALLOW_EMPTY_PASSWORD={{docker_postgresql_allow_empty_password}} \
+    - POSTGRESQL_USERNAME={{docker_postgresql_username}} \
+    - POSTGRESQL_PASSWORD={{docker_postgresql_password}} \
+    - POSTGRESQL_DATABASE={{docker_postgresql_database}} \
+    - POSTGRESQL_POSTGRES_PASSWORD={{docker_postgresql_postgres_password}} \
+    - POSTGRESQL_PGAUDIT_LOG={{docker_postgresql_pgaudit_log}} \
+    - POSTGRESQL_PGAUDIT_LOG_CATALOG={{docker_postgresql_pgaudit_log_catalog}} \
+    - POSTGRESQL_LOG_CONNECTIONS={{docker_postgresql_log_connections}} \
+    - POSTGRESQL_LOG_DISCONNECTIONS={{docker_postgresql_log_disconnections}} \
+    - POSTGRESQL_LOG_HOSTNAME={{docker_postgresql_log_hostname}} \
+    - POSTGRESQL_LOG_LINE_PREFIX={{docker_postgresql_log_line_prefix}} \
+    - POSTGRESQL_LOG_TIMEZONE={{docker_postgresql_log_timezone}} \
+    - POSTGRESQL_USERNAME_CONNECTION_LIMIT={{docker_postgresql_username_connection_limit}} \
+    - POSTGRESQL_POSTGRES_CONNECTION_LIMIT={{docker_postgresql_postgres_connection_limit}} \
+    - POSTGRESQL_STATEMENT_TIMEOUT={{docker_postgresql_statement_timeout}} \
+    - POSTGRESQL_TCP_KEEPALIVES_INTERVAL={{docker_postgresql_tcp_keepalives_interval}} \
+    - POSTGRESQL_TCP_KEEPALIVES_IDLE={{docker_postgresql_tcp_keepalives_idle}} \
+    - POSTGRESQL_TCP_KEEPALIVES_COUNT={{docker_postgresql_tcp_keepalives_count}} \
+    - POSTGRESQL_TIMEZONE={{docker_postgresql_timezone}} \
     -v /opt/docker-postgresql/data:/bitnami/postgresql:Z \
     --network=postgresql-network \
     --restart unless-stopped \

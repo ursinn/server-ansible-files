@@ -1,1 +1,22 @@
 ---
+docker_postgresql_allow_empty_password: "yes"
+docker_postgresql_username: ""
+docker_postgresql_password: ""
+docker_postgresql_database: ""
+docker_postgresql_postgres_password: ""
+docker_postgresql_pgaudit_log: ""
+docker_postgresql_pgaudit_log_catalog: ""
+docker_postgresql_log_connections: ""
+docker_postgresql_log_disconnections: ""
+docker_postgresql_log_hostname: ""
+docker_postgresql_log_line_prefix: ""
+docker_postgresql_log_timezone: "CET"
+docker_postgresql_username_connection_limit: ""
+docker_postgresql_postgres_connection_limit: ""
+docker_postgresql_statement_timeout: ""
+docker_postgresql_tcp_keepalives_interval: ""
+docker_postgresql_tcp_keepalives_idle: ""
+docker_postgresql_tcp_keepalives_count: ""
+docker_postgresql_timezone: "CET"
+
+app_phpmyadmin_enabled: false

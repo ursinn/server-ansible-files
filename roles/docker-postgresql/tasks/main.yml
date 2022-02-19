@@ -1,1 +1,4 @@
 ---
+- include_tasks: "{{ role_path }}/tasks/setup.yml"
+  when: 
+    app_phpmyadmin_enabled|bool
