@@ -1,4 +1,4 @@
 ---
-promtail_loki_url: ""
-promtail_loki_username: ""
-promtail_loki_password: ""
+system_promtail_loki_url: ""
+system_promtail_loki_username: ""
+system_promtail_loki_password: ""
