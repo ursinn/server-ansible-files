@@ -39,7 +39,7 @@
     --name=archisteamfarm \
     -v /opt/app-archisteamfarm/config:/app/config:Z \
     -v /opt/app-archisteamfarm/plugins:/app/plugins:Z \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/justarchi/archisteamfarm
   when:

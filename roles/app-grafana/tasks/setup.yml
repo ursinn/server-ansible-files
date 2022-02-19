@@ -31,7 +31,7 @@
     --name=grafana \
     -v grafana-data:/var/lib/grafana:Z \
     -v grafana-config:/etc/grafana:Z \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/grafana/grafana-enterprise
   when:

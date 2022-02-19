@@ -1,7 +1,7 @@
 ---
-- name: Create swag network
+- name: Create app network
   community.docker.docker_network:
-    name: swag-network
+    name: app-network
 
 - name: Create directory
   ansible.builtin.file:
@@ -89,7 +89,7 @@
     -v /opt/docker-swag/config:/config:Z \
     -p 443:443 \
     -p 80:80 \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     lscr.io/linuxserver/swag
   when:

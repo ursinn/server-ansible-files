@@ -44,7 +44,7 @@
     -e KEYCLOAK_CACHE_OWNERS_COUNT={{app_keycloak_keycloak_cache_owners_count}} \
     -e KEYCLOAK_AUTH_CACHE_OWNERS_COUNT={{app_keycloak_keycloak_auth_cache_owners_count}} \
     -e KEYCLOAK_ENABLE_STATISTICS={{app_keycloak_keycloak_enable_statistics}} \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/bitnami/keycloak
   when: 

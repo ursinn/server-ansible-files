@@ -33,7 +33,7 @@
     -e JENKINS_PASSWORD={{app_jenkins_password}} \
     -e JENKINS_EMAIL={{app_jenkins_email}} \
     -v /opt/app-jenkins/data:/bitnami/jenkins:Z \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/bitnami/jenkins
   when: 

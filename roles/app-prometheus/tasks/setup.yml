@@ -42,7 +42,7 @@
     --name=prometheus \
     -v /opt/app-prometheus/config:/etc/prometheus:Z \
     -v prometheus-data:/prometheus:Z \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/prom/prometheus
   when:

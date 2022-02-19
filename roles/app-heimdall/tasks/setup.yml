@@ -33,7 +33,7 @@
     -e PGID={{app_heimdall_pgid}} \
     -e TZ=Europe/Zurich \
     -v /opt/app-heimdall/config:/config:Z \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     lscr.io/linuxserver/heimdall
   when: 
