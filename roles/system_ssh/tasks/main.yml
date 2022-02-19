@@ -1,20 +1,20 @@
 ---
 - name: Set permissions for .ssh directory
   ansible.builtin.file:
-    path: "/home/{{ ssh_user }}/.ssh"
+    path: "/home/{{ system_ssh_user }}/.ssh"
     state: directory
     mode: 0700
-    owner: "{{ ssh_user }}"
-    group: "{{ ssh_user if ansible_pkg_mgr != 'zypper' else 'users' }}"
+    owner: "{{ system_ssh_user }}"
+    group: "{{ system_ssh_user if ansible_pkg_mgr != 'zypper' else 'users' }}"
 
-- name: "Insert public ssh key for user {{ ssh_user }}"
+- name: "Insert public ssh key for user {{ system_ssh_user }}"
   ansible.builtin.blockinfile:
-    dest: "/home/{{ ssh_user }}/.ssh/authorized_keys"
+    dest: "/home/{{ system_ssh_user }}/.ssh/authorized_keys"
     create: true
-    owner: "{{ ssh_user }}"
-    group: "{{ ssh_user if ansible_os_family != 'Suse' else 'users' }}"
+    owner: "{{ system_ssh_user }}"
+    group: "{{ system_ssh_user if ansible_os_family != 'Suse' else 'users' }}"
     mode: 0644
-    block: "{{ ssh_user_key }}"
+    block: "{{ system_ssh_user_key }}"
 
 - name: Disable root login.
   ansible.builtin.lineinfile: 
@@ -68,8 +68,8 @@
 - name: Ensure SSH is started and enabled at boot
   service:
     name: sshd
-    state: "{{ ssh_service_state }}"
-    enabled: "{{ ssh_service_enabled }}"
+    state: "{{ system_ssh_service_state }}"
+    enabled: "{{ system_ssh_service_enabled }}"
   ignore_errors: "{{ ansible_check_mode }}"
 
 - name: Ensure handlers are notified now to avoid firewall conflicts
@@ -82,7 +82,7 @@
 
 - name: "Add user {{ ssh_user }} to sudo group"
   ansible.builtin.user:
-    name: "{{ ssh_user }}"
+    name: "{{ system_ssh_user }}"
     groups: "{{ item }}"
     append: yes
   when: 'item in etc_groups.stdout_lines'
