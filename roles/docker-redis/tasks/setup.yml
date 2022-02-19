@@ -1,7 +1,7 @@
 ---
-- name: Create redis network
+- name: Create app network
   community.docker.docker_network:
-    name: redis-network
+    name: app-network
 
 - name: Create directorys
   ansible.builtin.file:
@@ -38,17 +38,9 @@
     -e REDIS_PASSWORD={{docker_redis_redis_password}} \
     -e REDIS_ACLFILE={{docker_redis_redis_aclfile}} \
     -v /opt/docker-redis/data:/bitnami/redis/data:Z \
-    --network=redis-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/bitnami/redis
-  when:
-    pulled.changed
-    or
-    result.exists == false
-
-- name: Add redis container to bridge network
-  ansible.builtin.shell:
-    cmd: "docker network connect bridge redis"
   when:
     pulled.changed
     or
