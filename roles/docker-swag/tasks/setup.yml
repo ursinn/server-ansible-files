@@ -48,7 +48,7 @@
     group: "{{docker_swag_pgid}}"
     force: "{{docker_swag_force}}"
     mode: 0644
-    register: htpasswd_file
+  register: htpasswd_file
 
 - name: Ensure linuxserver/swag image is pulled
   community.docker.docker_image:
