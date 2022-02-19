@@ -40,3 +40,11 @@
     pulled.changed
     or
     result.exists == false
+
+- name: Add endlessh container to bridge network
+  ansible.builtin.shell:
+    cmd: "docker network connect bridge endlessh"
+  when: 
+    pulled.changed
+    or
+    result.exists == false
