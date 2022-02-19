@@ -1,2 +1,25 @@
 ---
 app_keycloak_enabled: false
+app_keycloak_keycloak_create_admin_user: true
+app_keycloak_keycloak_admin_user: "user"
+app_keycloak_keycloak_admin_password: "bitnami"
+app_keycloak_keycloak_management_user: "manager"
+app_keycloak_keycloak_management_password: "bitnami1"
+app_keycloak_keycloak_database_host: "postgresql"
+app_keycloak_keycloak_database_port: '5432'
+app_keycloak_keycloak_database_name: "bitnami_keycloak"
+app_keycloak_keycloak_database_user: "bn_keycloak"
+app_keycloak_keycloak_database_password: ""
+app_keycloak_keycloak_database_schema: "public"
+app_keycloak_keycloak_jdbc_params: ""
+app_keycloak_keycloak_enable_tls: false
+app_keycloak_keycloak_tls_keystore_file: ""
+app_keycloak_keycloak_tls_truststore_file: ""
+app_keycloak_keycloak_tls_keystore_password: ""
+app_keycloak_keycloak_tls_truststore_password: ""
+app_keycloak_keycloak_jgroups_discovery_protocol: ""
+app_keycloak_keycloak_jgroups_discovery_properties: ""
+app_keycloak_keycloak_jgroups_transport_stack: "tcp"
+app_keycloak_keycloak_cache_owners_count: '1'
+app_keycloak_keycloak_auth_cache_owners_count: '1'
+app_keycloak_keycloak_enable_statistics: true

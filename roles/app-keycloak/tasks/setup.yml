@@ -21,6 +21,29 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=keycloak \
+    -e KEYCLOAK_CREATE_ADMIN_USER={{app_keycloak_keycloak_create_admin_user}} \
+    -e KEYCLOAK_ADMIN_USER={{app_keycloak_keycloak_admin_user}} \
+    -e KEYCLOAK_ADMIN_PASSWORD={{app_keycloak_keycloak_admin_password}} \
+    -e KEYCLOAK_MANAGEMENT_USER={{app_keycloak_keycloak_management_user}} \
+    -e KEYCLOAK_MANAGEMENT_PASSWORD={{app_keycloak_keycloak_management_password}} \
+    -e KEYCLOAK_DATABASE_HOST={{app_keycloak_keycloak_database_host}} \
+    -e KEYCLOAK_DATABASE_PORT={{app_keycloak_keycloak_database_port}} \
+    -e KEYCLOAK_DATABASE_NAME={{app_keycloak_keycloak_database_name}} \
+    -e KEYCLOAK_DATABASE_USER={{app_keycloak_keycloak_database_user}} \
+    -e KEYCLOAK_DATABASE_PASSWORD={{app_keycloak_keycloak_database_password}} \
+    -e KEYCLOAK_DATABASE_SCHEMA={{app_keycloak_keycloak_database_schema}} \
+    -e KEYCLOAK_JDBC_PARAMS={{app_keycloak_keycloak_jdbc_params}} \
+    -e KEYCLOAK_ENABLE_TLS={{app_keycloak_keycloak_enable_tls}} \
+    -e KEYCLOAK_TLS_KEYSTORE_FILE={{app_keycloak_keycloak_tls_keystore_file}} \
+    -e KEYCLOAK_TLS_TRUSTSTORE_FILE={{app_keycloak_keycloak_tls_truststore_file}} \
+    -e KEYCLOAK_TLS_KEYSTORE_PASSWORD={{app_keycloak_keycloak_tls_keystore_password}} \
+    -e KEYCLOAK_TLS_TRUSTSTORE_PASSWORD={{app_keycloak_keycloak_tls_truststore_password}} \
+    -e KEYCLOAK_JGROUPS_DISCOVERY_PROTOCOL={{app_keycloak_keycloak_jgroups_discovery_protocol}} \
+    -e KEYCLOAK_JGROUPS_DISCOVERY_PROPERTIES={{app_keycloak_keycloak_jgroups_discovery_properties}} \
+    -e KEYCLOAK_JGROUPS_TRANSPORT_STACK={{app_keycloak_keycloak_jgroups_transport_stack}} \
+    -e KEYCLOAK_CACHE_OWNERS_COUNT={{app_keycloak_keycloak_cache_owners_count}} \
+    -e KEYCLOAK_AUTH_CACHE_OWNERS_COUNT={{app_keycloak_keycloak_auth_cache_owners_count}} \
+    -e KEYCLOAK_ENABLE_STATISTICS={{app_keycloak_keycloak_enable_statistics}} \
     --network=swag-network \
     --restart unless-stopped \
     docker.io/bitnami/keycloak
