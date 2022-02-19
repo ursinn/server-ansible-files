@@ -1,2 +1,5 @@
 ---
 app_endlessh_enabled: false
+app_endlessh_puid: '16704'
+app_endlessh_pgid: '16704'
+app_endlessh_tz: "Europe/Zurich"

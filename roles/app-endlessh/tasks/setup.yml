@@ -3,8 +3,8 @@
   ansible.builtin.file:
     path: /opt/app-endlessh/config
     state: directory
-    owner: '16704'
-    group: '16704'
+    owner: "{{app_endlessh_puid}}"
+    group: "{{app_endlessh_pgid}}"
     mode: 0755
 
 - name: Ensure linuxserver/endlessh image is pulled
@@ -29,9 +29,9 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=endlessh \
-    -e PUID=16704 \
-    -e PGID=16704 \
-    -e TZ=Europe/Zurich \
+    -e PUID={{app_endlessh_puid}} \
+    -e PGID={{app_endlessh_pgid}} \
+    -e TZ={{app_endlessh_tz}} \
     -v /opt/app-endlessh/config:/config:Z \
     -p 2222:2222 \
     --restart unless-stopped \
