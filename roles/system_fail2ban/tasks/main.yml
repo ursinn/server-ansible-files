@@ -1,8 +1,8 @@
 ---
 - name: Install Fail2ban
   package:
-    name: "{{ fail2ban_package }}"
-    state: "{{ fail2ban_package_state }}"
+    name: "{{ system_fail2ban_package }}"
+    state: "{{ system_fail2ban_package_state }}"
   notify: restart fail2ban
   ignore_errors: "{{ ansible_check_mode }}"
 
@@ -10,11 +10,11 @@
   ansible.builtin.blockinfile:
     dest: /etc/fail2ban/jail.local
     create: true
-    block: "{{ fail2ban_jail_local }}"
+    block: "{{ system_fail2ban_jail_local }}"
 
 - name: Ensure Fail2ban is started and enabled at boot
   service:
     name: fail2ban
-    state: "{{ fail2ban_service_state }}"
-    enabled: "{{ fail2ban_service_enabled }}"
+    state: "{{ system_fail2ban_service_state }}"
+    enabled: "{{ system_fail2ban_service_enabled }}"
   ignore_errors: "{{ ansible_check_mode }}"

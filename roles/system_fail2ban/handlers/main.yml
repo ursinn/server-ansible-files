@@ -1,4 +1,4 @@
 ---
 - name: restart fail2ban
-  service: "name=fail2ban state={{ fail2ban_restart_handler_state }}"
+  service: "name=fail2ban state={{ system_fail2ban_restart_handler_state }}"
   ignore_errors: "{{ ansible_check_mode }}"
