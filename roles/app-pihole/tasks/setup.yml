@@ -61,10 +61,18 @@
     -e DNSMASQ_USER={{app_pihole_dnsmasq_user}} \
     -v /opt/app-pihole/data:/etc/pihole:Z \
     -p 53:53 \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/pihole/pihole
   when: 
+    pulled.changed
+    or
+    result.exists == false
+
+- name: Add pihole container to bridge network
+  ansible.builtin.shell:
+    cmd: "docker network connect bridge pihole"
+  when:
     pulled.changed
     or
     result.exists == false
