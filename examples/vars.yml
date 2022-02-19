@@ -50,6 +50,32 @@ app_jenkins_username: "user"
 app_jenkins_password: "bitnami"
 app_jenkins_email: "user@example.com"
 
+# App Keycloak
+app_keycloak_enabled: false
+app_keycloak_keycloak_create_admin_user: true
+app_keycloak_keycloak_admin_user: "user"
+app_keycloak_keycloak_admin_password: "bitnami"
+app_keycloak_keycloak_management_user: "manager"
+app_keycloak_keycloak_management_password: "bitnami1"
+app_keycloak_keycloak_database_host: "postgresql"
+app_keycloak_keycloak_database_port: '5432'
+app_keycloak_keycloak_database_name: "bitnami_keycloak"
+app_keycloak_keycloak_database_user: "bn_keycloak"
+app_keycloak_keycloak_database_password: ""
+app_keycloak_keycloak_database_schema: "public"
+app_keycloak_keycloak_jdbc_params: ""
+app_keycloak_keycloak_enable_tls: false
+app_keycloak_keycloak_tls_keystore_file: ""
+app_keycloak_keycloak_tls_truststore_file: ""
+app_keycloak_keycloak_tls_keystore_password: ""
+app_keycloak_keycloak_tls_truststore_password: ""
+app_keycloak_keycloak_jgroups_discovery_protocol: ""
+app_keycloak_keycloak_jgroups_discovery_properties: ""
+app_keycloak_keycloak_jgroups_transport_stack: "tcp"
+app_keycloak_keycloak_cache_owners_count: '1'
+app_keycloak_keycloak_auth_cache_owners_count: '1'
+app_keycloak_keycloak_enable_statistics: true
+
 # App Loki
 app_loki_enabled: false
 
@@ -60,12 +86,12 @@ app_nextcloud_pgid: '16704'
 
 # App PhpMyAdmin
 app_phpmyadmin_enabled: false
-app_phpmyadmin_phpmyadmin_allow_arbitrary_server: "false"
+app_phpmyadmin_phpmyadmin_allow_arbitrary_server: false
 app_phpmyadmin_phpmyadmin_allow_remote_connections: "yes"
 app_phpmyadmin_phpmyadmin_absolute_uri: ""
 app_phpmyadmin_database_allow_no_password: "yes"
 app_phpmyadmin_database_host: "postgresql"
-app_phpmyadmin_database_port_number: "3306"
+app_phpmyadmin_database_port_number: '5432'
 app_phpmyadmin_database_enable_ssl: "no"
 app_phpmyadmin_database_ssl_key: "no"
 app_phpmyadmin_database_ssl_cert: ""
@@ -77,7 +103,7 @@ app_phpmyadmin_configuration_storage_enable: "no"
 app_phpmyadmin_configuration_storage_db_user: "pma"
 app_phpmyadmin_configuration_storage_db_password: ""
 app_phpmyadmin_configuration_storage_db_host: "postgresql"
-app_phpmyadmin_configuration_storage_db_port_number: "3306"
+app_phpmyadmin_configuration_storage_db_port_number: '5432'
 app_phpmyadmin_configuration_storage_db_name: "phpmyadmin"
 app_phpmyadmin_php_enable_opcache: ""
 app_phpmyadmin_php_expose_php: ""
