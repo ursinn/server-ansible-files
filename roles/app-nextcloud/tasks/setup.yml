@@ -39,7 +39,7 @@
     --name=nextcloud \
     -e PUID={{app_nextcloud_puid}} \
     -e PGID={{app_nextcloud_pgid}} \
-    -e TZ=Europe/Zurich \
+    -e TZ={{app_nextcloud_tz}} \
     -v /opt/app-nextcloud/config:/config:Z \
     -v /opt/app-nextcloud/data:/data:Z \
     --network=app-network \

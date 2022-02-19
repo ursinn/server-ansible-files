@@ -2,3 +2,4 @@
 app_nextcloud_enabled: false
 app_nextcloud_puid: '16704'
 app_nextcloud_pgid: '16704'
+app_nextcloud_tz: "Europe/Zurich"
