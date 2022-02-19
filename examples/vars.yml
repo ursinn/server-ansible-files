@@ -43,6 +43,9 @@ app_heimdall_enabled: false
 
 # Jenkins
 app_jenkins_enabled: false
+app_jenkins_username: ""
+app_jenkins_password: ""
+app_jenkins_email: ""
 
 # Loki
 app_loki_enabled: false
@@ -72,6 +75,7 @@ app_uptime_kuma_enabled: false
 
 # Docker Swag
 docker_swag_htpasswd: ""
+docker_swag_url: "app.crazycraftland.info"
 
 # Fail2ban
 fail2ban_jail_local: ""
