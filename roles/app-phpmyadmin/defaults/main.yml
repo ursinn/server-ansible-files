@@ -1,11 +1,11 @@
 ---
 app_phpmyadmin_enabled: false
-app_phpmyadmin_phpmyadmin_allow_arbitrary_server: "false"
+app_phpmyadmin_phpmyadmin_allow_arbitrary_server: false
 app_phpmyadmin_phpmyadmin_allow_remote_connections: "yes"
 app_phpmyadmin_phpmyadmin_absolute_uri: ""
 app_phpmyadmin_database_allow_no_password: "yes"
 app_phpmyadmin_database_host: "postgresql"
-app_phpmyadmin_database_port_number: "3306"
+app_phpmyadmin_database_port_number: '5432'
 app_phpmyadmin_database_enable_ssl: "no"
 app_phpmyadmin_database_ssl_key: "no"
 app_phpmyadmin_database_ssl_cert: ""
@@ -17,7 +17,7 @@ app_phpmyadmin_configuration_storage_enable: "no"
 app_phpmyadmin_configuration_storage_db_user: "pma"
 app_phpmyadmin_configuration_storage_db_password: ""
 app_phpmyadmin_configuration_storage_db_host: "postgresql"
-app_phpmyadmin_configuration_storage_db_port_number: "3306"
+app_phpmyadmin_configuration_storage_db_port_number: '5432'
 app_phpmyadmin_configuration_storage_db_name: "phpmyadmin"
 app_phpmyadmin_php_enable_opcache: ""
 app_phpmyadmin_php_expose_php: ""
