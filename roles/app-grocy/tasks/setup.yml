@@ -25,7 +25,7 @@
     name: grocy
   register: result
 
-- name: Create heimdall container
+- name: Create grocy container
   ansible.builtin.shell: |
     docker run -d \
     --name=grocy \
