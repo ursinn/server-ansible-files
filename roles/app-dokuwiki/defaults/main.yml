@@ -1,0 +1,6 @@
+---
+app_dokuwiki_enabled: false
+app_dokuwiki_puid: '16704'
+app_dokuwiki_pgid: '16704'
+app_dokuwiki_tz: "Europe/Zurich"
+app_dokuwiki_dir: "/opt/app-dokuwiki"

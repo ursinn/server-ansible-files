@@ -1,0 +1,42 @@
+---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_dokuwiki_dir}}/config"
+    state: directory
+    owner: "{{app_dokuwiki_puid}}"
+    group: "{{app_dokuwiki_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/dokuwiki image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/dokuwiki
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove dokuwiki container
+  community.docker.docker_container:
+    name: dokuwiki
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on dokuwiki container
+  community.docker.docker_container_info:
+    name: dokuwiki
+  register: result
+
+- name: Create dokuwiki container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=dokuwiki \
+    -e PUID={{app_dokuwiki_puid}} \
+    -e PGID={{app_dokuwiki_pgid}} \
+    -e TZ={{app_dokuwiki_tz}} \
+    -v /{{app_dokuwiki_dir}}/config:/config:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/dokuwiki
+  when: 
+    pulled.changed
+    or
+    result.exists == false
