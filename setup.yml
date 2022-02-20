@@ -29,14 +29,13 @@
 #    - app-gitea
     - app-grafana
 #    - app-hastebin
-#    - app-hedgedoc
+    - app-hedgedoc
     - app-heimdall
     - app-jenkins
     - app-keycloak
     - app-loki
     - app-nextcloud
 #    - app-owncloud
-    - app-phpmyadmin
     - app-pihole
 #    - app-privatebin
     - app-prometheus
