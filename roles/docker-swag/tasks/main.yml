@@ -9,7 +9,15 @@
     or
     app_boinc_enabled|bool
     or
+    app_couchpotato_enabled|bool
+    or
     app_dokuwiki_enabled|bool
+    or
+    app_embystat_enabled|bool
+    or
+    app_foldingathome_enabled|bool
+    or
+    app_freshrss_enabled|bool
     or
     app_grafan_enabled|bool
     or
