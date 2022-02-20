@@ -54,6 +54,13 @@ app_boinc_pgid: '16704'
 app_boinc_tz: "Europe/Zurich"
 app_boinc_dir: "/opt/app-boinc"
 
+# App Couchpotato
+app_couchpotato_enabled: false
+app_couchpotato_puid: '16704'
+app_couchpotato_pgid: '16704'
+app_couchpotato_tz: "Europe/Zurich"
+app_couchpotato_dir: "/opt/app-couchpotato"
+
 # App Dokuwiki
 app_dokuwiki_enabled: false
 app_dokuwiki_puid: '16704'
@@ -61,8 +68,29 @@ app_dokuwiki_pgid: '16704'
 app_dokuwiki_tz: "Europe/Zurich"
 app_dokuwiki_dir: "/opt/app-dokuwiki"
 
+# App Embystat
+app_embystat_enabled: false
+app_embystat_puid: '16704'
+app_embystat_pgid: '16704'
+app_embystat_tz: "Europe/Zurich"
+app_embystat_dir: "/opt/app-embystat"
+
 # App Endlessh
 app_endlessh_enabled: false
+
+# App Foldingathome
+app_foldingathome_enabled: false
+app_foldingathome_puid: '16704'
+app_foldingathome_pgid: '16704'
+app_foldingathome_tz: "Europe/Zurich"
+app_foldingathome_dir: "/opt/app-foldingathome"
+
+# App Freshrss
+app_freshrss_enabled: false
+app_freshrss_puid: '16704'
+app_freshrss_pgid: '16704'
+app_freshrss_tz: "Europe/Zurich"
+app_freshrss_dir: "/opt/app-freshrss"
 
 # App Grafan
 app_grafan_enabled: false
