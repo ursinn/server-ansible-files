@@ -9,7 +9,7 @@ docker_swag_force: "yes"
 
 app_archisteamfarm_enabled: false
 app_bazarr_enabled: false
-app_beets_enable: false
+app_beets_enabled: false
 app_boinc_enabled: false
 app_couchpotato_enabled: false
 app_dokuwiki_enabled: false
