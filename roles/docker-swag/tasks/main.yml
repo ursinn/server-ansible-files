@@ -21,4 +21,6 @@
     or
     app_prometheus_enabled|bool
     or
+    app_sonarqube_enabled|bool
+    or
     app_uptime_kuma_enabled|bool
