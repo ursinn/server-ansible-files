@@ -5,6 +5,8 @@
     or
     app_grafan_enabled|bool
     or
+    app_hedgedoc_enabled|bool
+    or
     app_heimdall_enabled|bool
     or
     app_jenkins_enabled|bool
@@ -12,8 +14,6 @@
     app_loki_enabled|bool
     or
     app_nextcloud_enabled|bool
-    or
-    app_phpmyadmin_enabled|bool
     or
     app_pihole_enabled|bool
     or

@@ -7,11 +7,11 @@ docker_swag_force: "yes"
 
 app_archisteamfarm_enabled: false
 app_grafan_enabled: false
+app_hedgedoc_enabled: false
 app_heimdall_enabled: false
 app_jenkins_enabled: false
 app_loki_enabled: false
 app_nextcloud_enabled: false
-app_phpmyadmin_enabled: false
 app_pihole_enabled: false
 app_prometheus_enabled: false
 app_uptime_kuma_enabled: false
