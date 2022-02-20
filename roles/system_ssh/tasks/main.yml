@@ -80,7 +80,7 @@
   changed_when: false
   register: etc_groups
 
-- name: "Add user {{ ssh_user }} to sudo group"
+- name: "Add user {{ system_ssh_user }} to sudo group"
   ansible.builtin.user:
     name: "{{ system_ssh_user }}"
     groups: "{{ item }}"
