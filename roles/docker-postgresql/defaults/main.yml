@@ -21,3 +21,4 @@ docker_postgresql_timezone: "CET"
 
 app_hedgedoc_enabled: false
 app_keycloak_enabled: false
+app_owncloud_enabled: false
