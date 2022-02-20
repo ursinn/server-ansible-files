@@ -34,7 +34,7 @@
     - app-keycloak
     - app-loki
     - app-nextcloud
-#    - app-owncloud
+    - app-owncloud
     - app-pihole
 #    - app-privatebin
     - app-prometheus
