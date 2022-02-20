@@ -1,12 +1,15 @@
 ---
-docker_swag_htpasswd: ""
-docker_swag_url: ""
 docker_swag_puid: '16704'
 docker_swag_pgid: '16704'
+docker_swag_tz: "Europe/Zurich"
+docker_swag_dir: "/opt/docker-swag"
+docker_swag_htpasswd: ""
+docker_swag_url: ""
 docker_swag_force: "yes"
 
 app_archisteamfarm_enabled: false
 app_grafan_enabled: false
+app_grocy_enabled: false
 app_hedgedoc_enabled: false
 app_heimdall_enabled: false
 app_jenkins_enabled: false

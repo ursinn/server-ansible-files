@@ -5,7 +5,7 @@
 
 - name: Create directory
   ansible.builtin.file:
-    path: /opt/docker-swag/config/nginx/proxy-confs
+    path: "{{docker_swag_dir}}/config/nginx/proxy-confs"
     state: directory
     owner: "{{docker_swag_puid}}"
     group: "{{docker_swag_pgid}}"
@@ -14,35 +14,95 @@
 - name: Copy files
   ansible.builtin.copy:
     src: "{{ item }}.subdomain.conf"
-    dest: "/opt/docker-swag/config/nginx/proxy-confs/{{ item }}.subdomain.conf"
+    dest: "{{docker_swag_dir}}/config/nginx/proxy-confs/{{ item }}.subdomain.conf"
     owner: "{{docker_swag_puid}}"
     group: "{{docker_swag_pgid}}"
     force: "{{docker_swag_force}}"
     mode: 0644
   with_items:
     - "archisteamfarm"
+    - "authelia"
+    - "bazarr"
+    - "beets"
+    - "boinc"
+    - "booksonic"
+    - "bookstack"
+    - "calibre"
+    - "calibre-web"
+    - "chevereto"
+    - "couchpotato"
+    - "deluge"
+    - "dillinger"
     - "dokuwiki"
     - "duplicati"
+    - "emby"
+    - "embystat"
+    - "emulatorjs"
+    - "foldingathome"
+    - "freshrss"
     - "gitea"
     - "grafana"
+    - "grocy"
+    - "guacamole"
+    - "headphones"
+    - "healthchecks"
     - "hedgedoc"
     - "heimdall"
+    - "homeassistant"
     - "homer"
+    - "influxdb"
+    - "jellyfin"
     - "jenkins"
     - "keycloak"
+    - "lazylibrarian"
+    - "librespeed"
+    - "lidarr"
     - "loki"
+    - "lychee"
+    - "medusa"
+    - "mstream"
+    - "mylar"
+    - "netboot"
     - "nextcloud"
+    - "nzbget"
+    - "nzbhydra"
+    - "ombi"
+    - "overseerr"
+    - "papermerge"
     - "pihole"
+    - "piwigo"
     - "plex"
+    - "plexwebtools"
+    - "portainer"
     - "privatebin"
     - "prometheus"
+    - "pydio"
+    - "pydio-cells"
+    - "pyload"
+    - "qbittorrent"
+    - "radarr"
+    - "resilio-sync"
+    - "sabnzbd"
+    - "scrutiny"
+    - "sickchill"
+    - "sickrage"
+    - "smokeping"
+    - "sonarr"
+    - "synclounge"
+    - "syncthing"
+    - "tautulli"
+    - "transmission"
+    - "ubooquity"
+    - "unifi-controller"
     - "uptime-kuma"
+    - "webtop"
+    - "youtube-dl-server"
   register: files
 
 - name: Copy .htpasswd file
   ansible.builtin.copy:
     content: "{{ docker_swag_htpasswd }}"
-    dest: /opt/docker-swag/config/nginx/.htpasswd
+    dest: "{{docker_swag_dir}}/config/nginx/.htpasswd"
     owner: "{{docker_swag_puid}}"
     group: "{{docker_swag_pgid}}"
     force: "{{docker_swag_force}}"
@@ -79,15 +139,15 @@
     --cap-add=NET_ADMIN \
     -e PUID={{docker_swag_puid}} \
     -e PGID={{docker_swag_pgid}} \
-    -e TZ=Europe/Zurich \
+    -e TZ={{docker_swag_tz}} \
     -e URL={{docker_swag_url}} \
     -e SUBDOMAINS=wildcard \
     -e VALIDATION=dns \
     -e DNSPLUGIN=cloudflare \
     -e ONLY_SUBDOMAINS=true \
-    -v /opt/docker-swag/config:/config:Z \
-    -p 443:443 \
+    -v {{docker_swag_dir}}/config:/config:Z \
     -p 80:80 \
+    -p 443:443 \
     --network=app-network \
     --restart unless-stopped \
     lscr.io/linuxserver/swag
