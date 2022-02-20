@@ -41,7 +41,7 @@ app_bazarr_tz: "Europe/Zurich"
 app_bazarr_dir: "/opt/app-bazarr"
 
 # App Beets
-app_beets_enable: false
+app_beets_enabled: false
 app_beets_puid: '16704'
 app_beets_pgid: '16704'
 app_beets_tz: "Europe/Zurich"
