@@ -1,1 +1,6 @@
 ---
+app_embystat_enabled: false
+app_embystat_puid: '16704'
+app_embystat_pgid: '16704'
+app_embystat_tz: "Europe/Zurich"
+app_embystat_dir: "/opt/app-embystat"
