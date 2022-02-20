@@ -1,0 +1,42 @@
+---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_grocy_dir}}/config"
+    state: directory
+    owner: "{{app_grocy_puid}}"
+    group: "{{app_grocy_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/grocy image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/grocy
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove grocy container
+  community.docker.docker_container:
+    name: grocy
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on grocy container
+  community.docker.docker_container_info:
+    name: grocy
+  register: result
+
+- name: Create heimdall container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=grocy \
+    -e PUID={{app_grocy_puid}} \
+    -e PGID={{app_grocy_pgid}} \
+    -e TZ={{app_grocy_tz}} \
+    -v /{{app_grocy_dir}}/config:/config:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/grocy
+  when: 
+    pulled.changed
+    or
+    result.exists == false

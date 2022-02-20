@@ -1,0 +1,6 @@
+---
+app_grocy_enabled: false
+app_grocy_puid: '16704'
+app_grocy_pgid: '16704'
+app_grocy_tz: "Europe/Zurich"
+app_grocy_dir: "/opt/app-grocy"
