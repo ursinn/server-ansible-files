@@ -1,0 +1,6 @@
+---
+app_boinc_enabled: false
+app_boinc_puid: '16704'
+app_boinc_pgid: '16704'
+app_boinc_tz: "Europe/Zurich"
+app_boinc_dir: "/opt/app-boinc"
