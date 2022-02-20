@@ -1,1 +1,6 @@
 ---
+app_foldingathome_enabled: false
+app_foldingathome_puid: '16704'
+app_foldingathome_pgid: '16704'
+app_foldingathome_tz: "Europe/Zurich"
+app_foldingathome_dir: "/opt/app-foldingathome"
