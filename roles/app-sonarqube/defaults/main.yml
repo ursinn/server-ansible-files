@@ -1,2 +1,27 @@
 ---
 app_sonarqube_enabled: false
+app_sonarqube_sonarqube_username: "admin"
+app_sonarqube_sonarqube_password: "bitnami"
+app_sonarqube_sonarqube_email: "user@example.com"
+app_sonarqube_sonarqube_skip_bootstrap: "no"
+app_sonarqube_sonarqube_port_number: '9000'
+app_sonarqube_sonarqube_elasticsearch_port_number: '9001'
+app_sonarqube_sonarqube_web_context: "/"
+app_sonarqube_sonarqube_max_heap_size: ""
+app_sonarqube_sonarqube_min_heap_size: ""
+app_sonarqube_sonarqube_ce_java_add_opts: ""
+app_sonarqube_sonarqube_elasticsearch_java_add_opts: ""
+app_sonarqube_sonarqube_web_java_add_opts: ""
+app_sonarqube_sonarqube_extra_properties: ""
+app_sonarqube_sonarqube_start_timeout: '300'
+app_sonarqube_sonarqube_database_host: "postgresql"
+app_sonarqube_sonarqube_database_port_number: '5432'
+app_sonarqube_sonarqube_database_name: "bitnami_sonarqube"
+app_sonarqube_sonarqube_database_user: "bn_sonarqube"
+app_sonarqube_sonarqube_database_password: ""
+app_sonarqube_allow_empty_password: "no"
+app_sonarqube_sonarqube_smtp_host: ""
+app_sonarqube_sonarqube_smtp_port_number: ''
+app_sonarqube_sonarqube_smtp_user: ""
+app_sonarqube_sonarqube_smtp_password: ""
+app_sonarqube_sonarqube_smtp_protocol: ""

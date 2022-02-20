@@ -27,8 +27,33 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=sonarqube \
+    -e SONARQUBE_USERNAME={{app_sonarqube_sonarqube_username}} \
+    -e SONARQUBE_PASSWORD={{app_sonarqube_sonarqube_password}} \
+    -e SONARQUBE_EMAIL={{app_sonarqube_sonarqube_email}} \
+    -e SONARQUBE_SKIP_BOOTSTRAP={{app_sonarqube_sonarqube_skip_bootstrap}} \
+    -e SONARQUBE_PORT_NUMBER={{app_sonarqube_sonarqube_port_number}} \
+    -e SONARQUBE_ELASTICSEARCH_PORT_NUMBER={{app_sonarqube_sonarqube_elasticsearch_port_number}} \
+    -e SONARQUBE_WEB_CONTEXT={{app_sonarqube_sonarqube_web_context}} \
+    -e SONARQUBE_MAX_HEAP_SIZE={{app_sonarqube_sonarqube_max_heap_size}} \
+    -e SONARQUBE_MIN_HEAP_SIZE={{app_sonarqube_sonarqube_min_heap_size}} \
+    -e SONARQUBE_CE_JAVA_ADD_OPTS={{app_sonarqube_sonarqube_ce_java_add_opts}} \
+    -e SONARQUBE_ELASTICSEARCH_JAVA_ADD_OPTS={{app_sonarqube_sonarqube_elasticsearch_java_add_opts}} \
+    -e SONARQUBE_WEB_JAVA_ADD_OPTS={{app_sonarqube_sonarqube_web_java_add_opts}} \
+    -e SONARQUBE_EXTRA_PROPERTIES={{app_sonarqube_sonarqube_extra_properties}} \
+    -e SONARQUBE_START_TIMEOUT={{app_sonarqube_sonarqube_start_timeout}} \
+    -e SONARQUBE_DATABASE_HOST={{app_sonarqube_sonarqube_database_host}} \
+    -e SONARQUBE_DATABASE_PORT_NUMBER={{app_sonarqube_sonarqube_database_port_number}} \
+    -e SONARQUBE_DATABASE_NAME={{app_sonarqube_sonarqube_database_name}} \
+    -e SONARQUBE_DATABASE_USER={{app_sonarqube_sonarqube_database_user}} \
+    -e SONARQUBE_DATABASE_PASSWORD={{app_sonarqube_sonarqube_database_password}} \
+    -e ALLOW_EMPTY_PASSWORD={{app_sonarqube_allow_empty_password}} \
+    -e SONARQUBE_SMTP_HOST={{app_sonarqube_sonarqube_smtp_host}} \
+    -e SONARQUBE_SMTP_PORT_NUMBER={{app_sonarqube_sonarqube_smtp_port_number}} \
+    -e SONARQUBE_SMTP_USER={{app_sonarqube_sonarqube_smtp_user}} \
+    -e SONARQUBE_SMTP_PASSWORD={{app_sonarqube_sonarqube_smtp_password}} \
+    -e SONARQUBE_SMTP_PROTOCOL={{app_sonarqube_sonarqube_smtp_protocol}} \
     -v /opt/app-sonarqube/data:/bitnami/sonarqube:Z \
-    --network=swag-network \
+    --network=app-network \
     --restart unless-stopped \
     docker.io/bitnami/sonarqube
   when: 
