@@ -33,11 +33,46 @@ pip_install_packages: []
 # App ArchiSteamFarm
 app_archisteamfarm_enabled: false
 
+# App Bazarr
+app_bazarr_enabled: false
+app_bazarr_puid: '16704'
+app_bazarr_pgid: '16704'
+app_bazarr_tz: "Europe/Zurich"
+app_bazarr_dir: "/opt/app-bazarr"
+
+# App Beets
+app_beets_enable: false
+app_beets_puid: '16704'
+app_beets_pgid: '16704'
+app_beets_tz: "Europe/Zurich"
+app_beets_dir: "/opt/app-beets"
+
+# App Boinc
+app_boinc_enabled: false
+app_boinc_puid: '16704'
+app_boinc_pgid: '16704'
+app_boinc_tz: "Europe/Zurich"
+app_boinc_dir: "/opt/app-boinc"
+
+# App Dokuwiki
+app_dokuwiki_enabled: false
+app_dokuwiki_puid: '16704'
+app_dokuwiki_pgid: '16704'
+app_dokuwiki_tz: "Europe/Zurich"
+app_dokuwiki_dir: "/opt/app-dokuwiki"
+
 # App Endlessh
 app_endlessh_enabled: false
 
 # App Grafan
 app_grafan_enabled: false
+
+# App Grocy
+app_grocy_enabled: false
+app_grocy_puid: '16704'
+app_grocy_pgid: '16704'
+app_grocy_tz: "Europe/Zurich"
+app_grocy_dir: "/opt/app-grocy"
 
 # App Hedgedoc
 app_hedgedoc_enabled: false
@@ -99,6 +134,34 @@ app_nextcloud_enabled: false
 app_nextcloud_puid: '16704'
 app_nextcloud_pgid: '16704'
 
+# App Owncloud
+app_owncloud_enabled: false
+app_owncloud_owncloud_username: "user"
+app_owncloud_owncloud_password: "bitnami"
+app_owncloud_owncloud_email: "user@example.com"
+app_owncloud_owncloud_skip_bootstrap: "no"
+app_owncloud_owncloud_host: ""
+app_owncloud_owncloud_database_type: "mysql"
+app_owncloud_owncloud_database_host: "postgresql"
+app_owncloud_owncloud_database_port_number: '5432'
+app_owncloud_owncloud_database_name: "bitnami_owncloud"
+app_owncloud_owncloud_database_user: "bn_owncloud"
+app_owncloud_owncloud_database_password: ""
+app_owncloud_allow_empty_password: "no"
+app_owncloud_owncloud_smtp_host: ""
+app_owncloud_owncloud_smtp_port_number: ''
+app_owncloud_owncloud_smtp_user: ""
+app_owncloud_owncloud_smtp_password: ""
+app_owncloud_suitecrm_smtp_protocol: ""
+app_owncloud_php_enable_opcache: ""
+app_owncloud_php_expose_php: ""
+app_owncloud_php_max_execution_time: ""
+app_owncloud_php_max_input_time: ""
+app_owncloud_php_max_input_vars: ""
+app_owncloud_php_memory_limit: "512M"
+app_owncloud_php_post_max_size: "2G"
+app_owncloud_php_upload_max_filesize: "2G"
+
 # App Pi-Hole
 app_pihole_enabled: false
 app_pihole_tz: "Europe/Zurich"
@@ -147,6 +210,34 @@ app_prometheus_loki_urls: []
 app_prometheus_promtail_urls: []
 app_prometheus_node_exporter_urls: []
 
+# App Sonarqube
+app_sonarqube_enabled: false
+app_sonarqube_sonarqube_username: "admin"
+app_sonarqube_sonarqube_password: "bitnami"
+app_sonarqube_sonarqube_email: "user@example.com"
+app_sonarqube_sonarqube_skip_bootstrap: "no"
+app_sonarqube_sonarqube_port_number: '9000'
+app_sonarqube_sonarqube_elasticsearch_port_number: '9001'
+app_sonarqube_sonarqube_web_context: "/"
+app_sonarqube_sonarqube_max_heap_size: ""
+app_sonarqube_sonarqube_min_heap_size: ""
+app_sonarqube_sonarqube_ce_java_add_opts: ""
+app_sonarqube_sonarqube_elasticsearch_java_add_opts: ""
+app_sonarqube_sonarqube_web_java_add_opts: ""
+app_sonarqube_sonarqube_extra_properties: ""
+app_sonarqube_sonarqube_start_timeout: '300'
+app_sonarqube_sonarqube_database_host: "postgresql"
+app_sonarqube_sonarqube_database_port_number: '5432'
+app_sonarqube_sonarqube_database_name: "bitnami_sonarqube"
+app_sonarqube_sonarqube_database_user: "bn_sonarqube"
+app_sonarqube_sonarqube_database_password: ""
+app_sonarqube_allow_empty_password: "no"
+app_sonarqube_sonarqube_smtp_host: ""
+app_sonarqube_sonarqube_smtp_port_number: ''
+app_sonarqube_sonarqube_smtp_user: ""
+app_sonarqube_sonarqube_smtp_password: ""
+app_sonarqube_sonarqube_smtp_protocol: ""
+
 # App Uptime Kuma
 app_uptime_kuma_enabled: false
 
@@ -178,10 +269,12 @@ docker_redis_redis_password: ""
 docker_redis_redis_aclfile: ""
 
 # Docker Swag
-docker_swag_htpasswd: ""
-docker_swag_url: ""
 docker_swag_puid: '16704'
 docker_swag_pgid: '16704'
+docker_swag_tz: "Europe/Zurich"
+docker_swag_dir: "/opt/docker-swag"
+docker_swag_htpasswd: ""
+docker_swag_url: ""
 docker_swag_force: "yes"
 
 # System Fail2ban
