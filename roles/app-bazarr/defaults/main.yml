@@ -1,0 +1,6 @@
+---
+app_bazarr_enabled: false
+app_bazarr_puid: '16704'
+app_bazarr_pgid: '16704'
+app_bazarr_tz: "Europe/Zurich"
+app_bazarr_dir: "/opt/app-bazarr"

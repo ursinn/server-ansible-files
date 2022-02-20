@@ -1,0 +1,60 @@
+---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_bazarr_dir}}/config"
+    state: directory
+    owner: "{{app_bazarr_puid}}"
+    group: "{{app_bazarr_pgid}}"
+    mode: 0755
+
+- name: Create movies directory
+  ansible.builtin.file:
+    path: "{{app_bazarr_dir}}/movies"
+    state: directory
+    owner: "{{app_bazarr_puid}}"
+    group: "{{app_bazarr_pgid}}"
+    mode: 0755
+
+- name: Create tv directory
+  ansible.builtin.file:
+    path: "{{app_bazarr_dir}}/tv"
+    state: directory
+    owner: "{{app_bazarr_puid}}"
+    group: "{{app_bazarr_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/bazarr image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/bazarr
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove bazarr container
+  community.docker.docker_container:
+    name: bazarr
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on bazarr container
+  community.docker.docker_container_info:
+    name: bazarr
+  register: result
+
+- name: Create bazarr container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=bazarr \
+    -e PUID={{app_bazarr_puid}} \
+    -e PGID={{app_bazarr_pgid}} \
+    -e TZ={{app_bazarr_tz}} \
+    -v /{{app_bazarr_dir}}/config:/config:Z \
+    -v /{{app_bazarr_dir}}/movies:/movies:Z \
+    -v /{{app_bazarr_dir}}/tv:/tv:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/bazarr
+  when: 
+    pulled.changed
+    or
+    result.exists == false
