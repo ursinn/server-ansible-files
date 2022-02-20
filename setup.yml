@@ -24,19 +24,62 @@
     - docker-swag
     # Apps
     - app-archisteamfarm
+    - app-bazarr
+    - app-beets
+    - app-boinc
+    - app-booksonic
+    - app-bookstack
+    - app-calibre
+    - app-calibre-web
+    - app-chevereto
+    - app-couchpotato
+    - app-deluge
+    - app-dillinger
+    - app-dokuwiki
+    - app-duplicati
+    - app-emby
+    - app-embystat
+    - app-emulatorjs
     - app-endlessh
-#    - app-gitea
+    - app-foldingathome
+    - app-freshrss
+    - app-gitea
     - app-grafana
-#    - app-hastebin
+    - app-grocy
+    - app-guacamole
+    - app-headphones
+    - app-healthchecks
     - app-hedgedoc
     - app-heimdall
+    - app-homeassistant
+    - app-influxdb
+    - app-jellyfin
     - app-jenkins
     - app-keycloak
+    - app-lazylibrarian
+    - app-librespeed
+    - app-lidarr
     - app-loki
+    - app-lychee
+    - app-medusa
+    - app-mstream
+    - app-mylar
+    - app-netboot
     - app-nextcloud
+    - app-nzbget
+    - app-nzbhydra
+    - app-ombi
+    - app-overseerr
     - app-owncloud
+    - app-papermerge
     - app-pihole
-#    - app-privatebin
+    - app-piwigo
+    - app-plex
+    - app-plexwebtools
+    - app-portainer
+    - app-privatebin
     - app-prometheus
-#    - app-sonarqube
+    - app-pydio
+    - app-pydio-cells
+    - app-sonarqube
     - app-uptime-kuma
