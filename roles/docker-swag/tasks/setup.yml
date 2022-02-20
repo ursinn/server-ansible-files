@@ -25,6 +25,7 @@
     - "duplicati"
     - "gitea"
     - "grafana"
+    - "hedgedoc"
     - "heimdall"
     - "homer"
     - "jenkins"
