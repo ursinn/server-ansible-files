@@ -6,3 +6,5 @@
     app_keycloak_enabled|bool
     or
     app_owncloud_enabled|bool
+    or
+    app_sonarqube_enabled|bool
