@@ -31,7 +31,6 @@
     - "keycloak"
     - "loki"
     - "nextcloud"
-    - "phpmyadmin"
     - "pihole"
     - "plex"
     - "privatebin"
