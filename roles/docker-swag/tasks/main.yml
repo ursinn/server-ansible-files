@@ -3,7 +3,17 @@
   when: 
     app_archisteamfarm_enabled|bool
     or
+    app_bazarr_enabled|bool
+    or
+    app_beets_enabled|bool
+    or
+    app_boinc_enabled|bool
+    or
+    app_dokuwiki_enabled|bool
+    or
     app_grafan_enabled|bool
+    or
+    app_grocy_enabled|bool
     or
     app_hedgedoc_enabled|bool
     or

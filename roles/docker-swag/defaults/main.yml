@@ -8,6 +8,10 @@ docker_swag_url: ""
 docker_swag_force: "yes"
 
 app_archisteamfarm_enabled: false
+app_bazarr_enabled: false
+app_beets_enable: false
+app_boinc_enabled: false
+app_dokuwiki_enabled: false
 app_grafan_enabled: false
 app_grocy_enabled: false
 app_hedgedoc_enabled: false
