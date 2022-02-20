@@ -1,1 +1,60 @@
 ---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_couchpotato_dir}}/config"
+    state: directory
+    owner: "{{app_couchpotato_puid}}"
+    group: "{{app_couchpotato_pgid}}"
+    mode: 0755
+
+- name: Create downloads directory
+  ansible.builtin.file:
+    path: "{{app_couchpotato_dir}}/downloads"
+    state: directory
+    owner: "{{app_couchpotato_puid}}"
+    group: "{{app_couchpotato_pgid}}"
+    mode: 0755
+
+- name: Create movies directory
+  ansible.builtin.file:
+    path: "{{app_couchpotato_dir}}/movies"
+    state: directory
+    owner: "{{app_couchpotato_puid}}"
+    group: "{{app_couchpotato_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/couchpotato image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/couchpotato
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove couchpotato container
+  community.docker.docker_container:
+    name: couchpotato
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on couchpotato container
+  community.docker.docker_container_info:
+    name: couchpotato
+  register: result
+
+- name: Create couchpotato container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=couchpotato \
+    -e PUID={{app_couchpotato_puid}} \
+    -e PGID={{app_couchpotato_pgid}} \
+    -e TZ={{app_couchpotato_tz}} \
+    -v /{{app_couchpotato_dir}}/config:/config:Z \
+    -v /{{app_couchpotato_dir}}/downloads:/downloads:Z \
+    -v /{{app_couchpotato_dir}}/movies:/movies:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/couchpotato
+  when: 
+    pulled.changed
+    or
+    result.exists == false
