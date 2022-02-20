@@ -19,4 +19,5 @@ docker_postgresql_tcp_keepalives_idle: ""
 docker_postgresql_tcp_keepalives_count: ""
 docker_postgresql_timezone: "CET"
 
-app_phpmyadmin_enabled: false
+app_hedgedoc_enabled: false
+app_keycloak_enabled: false
