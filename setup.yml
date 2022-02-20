@@ -11,7 +11,7 @@
     - ansible-role-pip
     - ansible-role-firewall
     - system_fail2ban
-#    - system_endlessh
+    - system_endlessh
     - ansible-role-docker
     - system_docker
     - system_promtail
@@ -21,7 +21,7 @@
     - custom-oh-my-zsh
     # Docker App Helper
     - docker-postgresql
-#    - docker-redis
+    - docker-redis
     - docker-swag
     # Apps
     - app-archisteamfarm
