@@ -12,6 +12,7 @@ app_bazarr_enabled: false
 app_beets_enabled: false
 app_boinc_enabled: false
 app_couchpotato_enabled: false
+app_dillinger_enabled: false
 app_dokuwiki_enabled: false
 app_embystat_enabled: false
 app_foldingathome_enabled: false

@@ -11,6 +11,8 @@
     or
     app_couchpotato_enabled|bool
     or
+    app_dillinger_enabled|bool
+    or
     app_dokuwiki_enabled|bool
     or
     app_embystat_enabled|bool
