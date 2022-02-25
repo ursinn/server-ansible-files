@@ -61,6 +61,13 @@ app_couchpotato_pgid: '16704'
 app_couchpotato_tz: "Europe/Zurich"
 app_couchpotato_dir: "/opt/app-couchpotato"
 
+# App Dillinger
+app_dillinger_enabled: false
+app_dillinger_puid: '16704'
+app_dillinger_pgid: '16704'
+app_dillinger_tz: "Europe/Zurich"
+app_dillinger_dir: "/opt/app-dillinger"
+
 # App Dokuwiki
 app_dokuwiki_enabled: false
 app_dokuwiki_puid: '16704'
