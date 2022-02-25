@@ -1,1 +1,6 @@
 ---
+app_dillinger_enabled: false
+app_dillinger_puid: '16704'
+app_dillinger_pgid: '16704'
+app_dillinger_tz: "Europe/Zurich"
+app_dillinger_dir: "/opt/app-dillinger"
