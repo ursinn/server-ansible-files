@@ -1,1 +1,6 @@
 ---
+app_homeassistant_enabled: false
+app_homeassistant_puid: '16704'
+app_homeassistant_pgid: '16704'
+app_homeassistant_tz: "Europe/Zurich"
+app_homeassistant_dir: "/opt/app-homeassistant"
