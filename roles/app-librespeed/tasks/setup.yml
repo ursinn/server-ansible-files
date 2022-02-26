@@ -33,7 +33,7 @@
     -e PGID={{app_librespeed_pgid}} \
     -e TZ={{app_librespeed_tz}} \
     -e PASSWORD={{app_librespeed_password}} \
-    -e CUSTOM_RESULTS={{app_librespeed_custom_results}}
+    -e CUSTOM_RESULTS={{app_librespeed_custom_results}} \
     -v /{{app_librespeed_dir}}/config:/config:Z \
     --network=app-network \
     --restart unless-stopped \
