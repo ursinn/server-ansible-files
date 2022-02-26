@@ -275,17 +275,17 @@ app_mstream_tz: "Europe/Zurich"
 app_mstream_dir: "/opt/app-mstream"
 
 # App Mylar
-app_mylar_enabled: false
-app_mylar_puid: '16704'
-app_mylar_pgid: '16704'
-app_mylar_tz: "Europe/Zurich"
-app_mylar_dir: "/opt/app-mylar3"
+app_mylar3_enabled: false
+app_mylar3_puid: '16704'
+app_mylar3_pgid: '16704'
+app_mylar3_tz: "Europe/Zurich"
+app_mylar3_dir: "/opt/app-mylar3"
 
-# App Netboot
-app_netboot_enabled: false
-app_netboot_puid: '16704'
-app_netboot_pgid: '16704'
-app_netboot_dir: "/opt/app-netbootxyz"
+# App Netbootxyz
+app_netbootxyz_enabled: false
+app_netbootxyz_puid: '16704'
+app_netbootxyz_pgid: '16704'
+app_netbootxyz_dir: "/opt/app-netbootxyz"
 
 # App Nextcloud
 app_nextcloud_enabled: false
