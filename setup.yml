@@ -75,10 +75,10 @@
     - app-pihole
     - app-piwigo
     - app-plex
-    - app-plexwebtools
     - app-portainer
     - app-privatebin
     - app-prometheus
     - app-pydio-cells
+    - app-snipe-it
     - app-sonarqube
     - app-uptime-kuma
