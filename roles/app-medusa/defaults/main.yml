@@ -1,1 +1,6 @@
 ---
+app_medusa_enabled: false
+app_medusa_puid: '16704'
+app_medusa_pgid: '16704'
+app_medusa_tz: "Europe/Zurich"
+app_medusa_dir: "/opt/app-medusa"
