@@ -7,28 +7,28 @@
     group: "{{app_pydio_pgid}}"
     mode: 0755
 
-- name: Ensure linuxserver/pydio image is pulled
+- name: Ensure linuxserver/pydio-cell image is pulled
   community.docker.docker_image:
-    name: lscr.io/linuxserver/pydio
+    name: lscr.io/linuxserver/pydio-cell
     source: pull
     force_source: yes
   register: pulled
 
-- name: Remove pydio container
+- name: Remove pydio-cell container
   community.docker.docker_container:
-    name: pydio
+    name: pydio-cell
     state: absent
   when: pulled.changed
 
-- name: Get infos on pydio container
+- name: Get infos on pydio-cell container
   community.docker.docker_container_info:
-    name: pydio
+    name: pydio-cell
   register: result
 
-- name: Create pydio container
+- name: Create pydio-cell container
   ansible.builtin.shell: |
     docker run -d \
-    --name=pydio \
+    --name=pydio-cell \
     -e PUID={{app_pydio_puid}} \
     -e PGID={{app_pydio_pgid}} \
     -e TZ={{app_pydio_tz}} \
@@ -36,7 +36,7 @@
     -v /{{app_pydio_dir}}/config:/config:Z \
     --network=app-network \
     --restart unless-stopped \
-    lscr.io/linuxserver/pydio
+    lscr.io/linuxserver/pydio-cell
   when: 
     pulled.changed
     or
