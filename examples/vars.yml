@@ -61,6 +61,14 @@ app_couchpotato_pgid: '16704'
 app_couchpotato_tz: "Europe/Zurich"
 app_couchpotato_dir: "/opt/app-couchpotato"
 
+# App Deluge
+app_deluge_enabled: false
+app_deluge_puid: '16704'
+app_deluge_pgid: '16704'
+app_deluge_tz: "Europe/Zurich"
+app_deluge_dir: "/opt/app-deluge"
+app_deluge_loglevel: "error"
+
 # App Dillinger
 app_dillinger_enabled: false
 app_dillinger_puid: '16704'
@@ -75,6 +83,14 @@ app_dokuwiki_pgid: '16704'
 app_dokuwiki_tz: "Europe/Zurich"
 app_dokuwiki_dir: "/opt/app-dokuwiki"
 
+# App Duplicati
+app_duplicati_enabled: false
+app_duplicati_puid: '16704'
+app_duplicati_pgid: '16704'
+app_duplicati_tz: "Europe/Zurich"
+app_duplicati_dir: "/opt/app-duplicati"
+app_duplicati_cli_args: ""
+
 # App Embystat
 app_embystat_enabled: false
 app_embystat_puid: '16704'
@@ -84,6 +100,14 @@ app_embystat_dir: "/opt/app-embystat"
 
 # App Endlessh
 app_endlessh_enabled: false
+app_endlessh_puid: '16704'
+app_endlessh_pgid: '16704'
+app_endlessh_tz: "Europe/Zurich"
+app_endlessh_msdelay: '10000'
+app_endlessh_maxlines: '32'
+app_endlessh_maxclients: '4096'
+app_endlessh_logfile: false
+app_endlessh_bindfamily: ''
 
 # App Foldingathome
 app_foldingathome_enabled: false
@@ -109,6 +133,34 @@ app_grocy_pgid: '16704'
 app_grocy_tz: "Europe/Zurich"
 app_grocy_dir: "/opt/app-grocy"
 
+# App Headphones
+app_headphones_enabled: false
+app_headphones_puid: '16704'
+app_headphones_pgid: '16704'
+app_headphones_tz: "Europe/Zurich"
+app_headphones_dir: "/opt/app-headphones"
+
+# App Healthchecks
+app_healthchecks_enabled: false
+app_healthchecks_puid: '16704'
+app_healthchecks_pgid: '16704'
+app_healthchecks_dir: "/opt/app-healthchecks"
+app_healthchecks_site_name: ""
+app_healthchecks_default_from_email: ""
+app_healthchecks_email_host: ""
+app_healthchecks_email_port: ""
+app_healthchecks_email_host_user: ""
+app_healthchecks_email_host_password: ""
+app_healthchecks_email_use_tls: false
+app_healthchecks_allowed_hosts: ["*"]
+app_healthchecks_superuser_email: ""
+app_healthchecks_superuser_password: ""
+app_healthchecks_regenerate_settings: false
+app_healthchecks_site_logo_url: ""
+app_healthchecks_secret_key: ""
+app_healthchecks_apprise_enabled: false
+
+
 # App Hedgedoc
 app_hedgedoc_enabled: false
 app_hedgedoc_puid: '16704'
@@ -128,6 +180,14 @@ app_hedgedoc_cmd_port: '3000'
 app_heimdall_enabled: false
 app_heimdall_puid: '16704'
 app_heimdall_pgid: '16704'
+
+# App Homeassistant
+app_homeassistant_enabled: false
+app_homeassistant_puid: '16704'
+app_homeassistant_pgid: '16704'
+app_homeassistant_tz: "Europe/Zurich"
+app_homeassistant_dir: "/opt/app-homeassistant"
+
 
 # App Jenkins
 app_jenkins_enabled: false
@@ -230,6 +290,20 @@ app_pihole_dnsmasq_listening: ""
 app_pihole_web_port: ""
 app_pihole_skipgravityonboot: ""
 app_pihole_dnsmasq_user: ""
+
+# App Piwigo
+app_piwigo_enabled: false
+app_piwigo_puid: '16704'
+app_piwigo_pgid: '16704'
+app_piwigo_tz: "Europe/Zurich"
+app_piwigo_dir: "/opt/app-piwigo"
+
+# App Plex
+app_plex_enabled: false
+app_plex_puid: '16704'
+app_plex_pgid: '16704'
+app_plex_tz: "Europe/Zurich"
+app_plex_dir: "/opt/app-plex"
 
 # App Prometheus
 app_prometheus_enabled: false
