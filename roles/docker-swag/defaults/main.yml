@@ -31,6 +31,9 @@ app_heimdall_enabled: false
 app_homeassistant_enabled: false
 app_jellyfin_enabled: false
 app_jenkins_enabled: false
+app_keycloak_enabled: false
+app_lazylibrarian_enabled: false
+app_librespeed_enabled: false
 app_lidarr_enabled: false
 app_loki_enabled: false
 app_medusa_enabled: false
@@ -49,5 +52,6 @@ app_piwigo_enabled: false
 app_plex_enabled: false
 app_prometheus_enabled: false
 app_pydio_enabled: false
+app_snipe_it_enabled: false
 app_sonarqube_enabled: false
 app_uptime_kuma_enabled: false

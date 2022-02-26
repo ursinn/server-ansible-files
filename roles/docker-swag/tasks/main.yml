@@ -49,6 +49,12 @@
     or
     app_jenkins_enabled|bool
     or
+    app_keycloak_enabled|bool
+    or
+    app_lazylibrarian_enabled|bool
+    or
+    app_librespeed_enabled|bool
+    or
     app_lidarr_enabled|bool
     or
     app_loki_enabled|bool
@@ -84,6 +90,8 @@
     app_prometheus_enabled|bool
     or
     app_pydio_enabled|bool
+    or
+    app_snipe_it_enabled|bool
     or
     app_sonarqube_enabled|bool
     or
