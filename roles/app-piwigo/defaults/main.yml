@@ -1,1 +1,6 @@
 ---
+app_piwigo_enabled: false
+app_piwigo_puid: '16704'
+app_piwigo_pgid: '16704'
+app_piwigo_tz: "Europe/Zurich"
+app_piwigo_dir: "/opt/app-piwigo"

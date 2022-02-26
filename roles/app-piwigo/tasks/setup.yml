@@ -1,1 +1,51 @@
 ---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_piwigo_dir}}/config"
+    state: directory
+    owner: "{{app_piwigo_puid}}"
+    group: "{{app_piwigo_pgid}}"
+    mode: 0755
+
+- name: Create gallery  directory
+  ansible.builtin.file:
+    path: "{{app_piwigo_dir}}/gallery"
+    state: directory
+    owner: "{{app_piwigo_puid}}"
+    group: "{{app_piwigo_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/piwigo image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/piwigo
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove piwigo container
+  community.docker.docker_container:
+    name: piwigo
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on piwigo container
+  community.docker.docker_container_info:
+    name: piwigo
+  register: result
+
+- name: Create piwigo container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=piwigo \
+    -e PUID={{app_piwigo_puid}} \
+    -e PGID={{app_piwigo_pgid}} \
+    -e TZ={{app_piwigo_tz}} \
+    -v /{{app_piwigo_dir}}/config:/config:Z \
+    -v /{{app_piwigo_dir}}/backups:/gallery:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/piwigo
+  when: 
+    pulled.changed
+    or
+    result.exists == false
