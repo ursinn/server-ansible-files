@@ -1,3 +1,3 @@
 ---
 - include_tasks: "{{ role_path }}/tasks/setup.yml"
-  when: "app_netboot_enabled|bool"
+  when: "app_netbootxyz_enabled|bool"

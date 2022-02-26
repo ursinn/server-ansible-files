@@ -1,0 +1,5 @@
+---
+app_netbootxyz_enabled: false
+app_netbootxyz_puid: '16704'
+app_netbootxyz_pgid: '16704'
+app_netbootxyz_dir: "/opt/app-netbootxyz"
