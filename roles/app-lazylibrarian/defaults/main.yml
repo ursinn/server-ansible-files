@@ -1,1 +1,6 @@
 ---
+app_lazylibrarian_enabled: false
+app_lazylibrarian_puid: '16704'
+app_lazylibrarian_pgid: '16704'
+app_lazylibrarian_tz: "Europe/Zurich"
+app_lazylibrarian_dir: "/opt/app-lazylibrarian"
