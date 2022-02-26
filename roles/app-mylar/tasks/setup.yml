@@ -1,1 +1,60 @@
 ---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_mylar_dir}}/config"
+    state: directory
+    owner: "{{app_mylar_puid}}"
+    group: "{{app_mylar_pgid}}"
+    mode: 0755
+
+- name: Create comics directory
+  ansible.builtin.file:
+    path: "{{app_mylar_dir}}/comics"
+    state: directory
+    owner: "{{app_mylar_puid}}"
+    group: "{{app_mylar_pgid}}"
+    mode: 0755
+
+- name: Create downloads directory
+  ansible.builtin.file:
+    path: "{{app_mylar_dir}}/downloads"
+    state: directory
+    owner: "{{app_mylar_puid}}"
+    group: "{{app_mylar_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/mylar3 image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/mylar3
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove mylar3 container
+  community.docker.docker_container:
+    name: mylar3
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on mylar3 container
+  community.docker.docker_container_info:
+    name: mylar3
+  register: result
+
+- name: Create mylar3 container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=mylar3 \
+    -e PUID={{app_mylar_puid}} \
+    -e PGID={{app_mylar_pgid}} \
+    -e TZ={{app_mylar_tz}} \
+    -v /{{app_mylar_dir}}/config:/config:Z \
+    -v /{{app_mylar_dir}}/comics:/comics:Z \
+    -v /{{app_mylar_dir}}/downloads:/downloads:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/mylar3
+  when: 
+    pulled.changed
+    or
+    result.exists == false
