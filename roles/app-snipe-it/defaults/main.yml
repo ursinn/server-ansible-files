@@ -1,0 +1,6 @@
+---
+app_snipe_it_enabled: false
+app_snipe_it_puid: '16704'
+app_snipe_it_pgid: '16704'
+app_snipe_it_tz: "Europe/Zurich"
+app_snipe_it_dir: "/opt/app-snipe-it"
