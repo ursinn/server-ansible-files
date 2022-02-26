@@ -1,1 +1,8 @@
 ---
+app_calibre_enabled: false
+app_calibre_puid: '16704'
+app_calibre_pgid: '16704'
+app_calibre_tz: "Europe/Zurich"
+app_calibre_dir: "/opt/app-calibre"
+app_calibre_password: ""
+app_calibre_cli_args: ""
