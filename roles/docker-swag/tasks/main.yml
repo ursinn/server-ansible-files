@@ -9,6 +9,8 @@
     or
     app_boinc_enabled|bool
     or
+    app_calibre_enabled|bool
+    or
     app_couchpotato_enabled|bool
     or
     app_deluge_enabled|bool
@@ -19,7 +21,11 @@
     or
     app_duplicati_enabled|bool
     or
+    app_emby_enabled|bool
+    or
     app_embystat_enabled|bool
+    or
+    app_emulatorjs_enabled|bool
     or
     app_foldingathome_enabled|bool
     or
@@ -39,7 +45,11 @@
     or
     app_homeassistant_enabled|bool
     or
+    app_jellyfin_enabled|bool
+    or
     app_jenkins_enabled|bool
+    or
+    app_lidarr_enabled|bool
     or
     app_loki_enabled|bool
     or
@@ -54,6 +64,8 @@
     app_plex_enabled|bool
     or
     app_prometheus_enabled|bool
+    or
+    app_pydio_enabled|bool
     or
     app_sonarqube_enabled|bool
     or
