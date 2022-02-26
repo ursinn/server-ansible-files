@@ -1,1 +1,61 @@
 ---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_plex_dir}}/config"
+    state: directory
+    owner: "{{app_plex_puid}}"
+    group: "{{app_plex_pgid}}"
+    mode: 0755
+
+- name: Create tv directory
+  ansible.builtin.file:
+    path: "{{app_plex_dir}}/tv"
+    state: directory
+    owner: "{{app_plex_puid}}"
+    group: "{{app_plex_pgid}}"
+    mode: 0755
+
+- name: Create movies directory
+  ansible.builtin.file:
+    path: "{{app_plex_dir}}/movies"
+    state: directory
+    owner: "{{app_plex_puid}}"
+    group: "{{app_plex_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/plex image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/plex
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove plex container
+  community.docker.docker_container:
+    name: plex
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on plex container
+  community.docker.docker_container_info:
+    name: plex
+  register: result
+
+- name: Create plex container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=plex \
+    -e PUID={{app_plex_puid}} \
+    -e PGID={{app_plex_pgid}} \
+    -e TZ={{app_plex_tz}} \
+    -e VERSION=docker \
+    -v /{{app_plex_dir}}/config:/config:Z \
+    -v /{{app_plex_dir}}/tv:/tv:Z \
+    -v /{{app_plex_dir}}/movies:/movies:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/plex
+  when: 
+    pulled.changed
+    or
+    result.exists == false
