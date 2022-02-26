@@ -50,7 +50,7 @@
     -e TZ={{app_lidarr_tz}} \
     -v /{{app_lidarr_dir}}/config:/config:Z \
     -v /{{app_lidarr_dir}}/music:/music:Z \
-    -v /{{app_lidarr_dir}}/download :/downloads:Z \
+    -v /{{app_lidarr_dir}}/downloads:/downloads:Z \
     --network=app-network \
     --restart unless-stopped \
     lscr.io/linuxserver/lidarr
