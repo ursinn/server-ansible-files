@@ -1,1 +1,51 @@
 ---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_papermerge_dir}}/config"
+    state: directory
+    owner: "{{app_papermerge_puid}}"
+    group: "{{app_papermerge_pgid}}"
+    mode: 0755
+
+- name: Create data directory
+  ansible.builtin.file:
+    path: "{{app_papermerge_dir}}/data"
+    state: directory
+    owner: "{{app_papermerge_puid}}"
+    group: "{{app_papermerge_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/papermerge image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/papermerge
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove papermerge container
+  community.docker.docker_container:
+    name: papermerge
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on papermerge container
+  community.docker.docker_container_info:
+    name: papermerge
+  register: result
+
+- name: Create papermerge container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=papermerge \
+    -e PUID={{app_papermerge_puid}} \
+    -e PGID={{app_papermerge_pgid}} \
+    -e TZ={{app_papermerge_tz}} \
+    -v /{{app_papermerge_dir}}/config:/config:Z \
+    -v /{{app_papermerge_dir}}/data:/data:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/papermerge
+  when: 
+    pulled.changed
+    or
+    result.exists == false
