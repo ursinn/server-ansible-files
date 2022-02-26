@@ -53,9 +53,27 @@
     or
     app_loki_enabled|bool
     or
+    app_medusa_enabled|bool
+    or
+    app_mstream_enabled|bool
+    or
+    app_mylar_enabled|bool
+    or
+    app_netboot_enabled|bool
+    or
     app_nextcloud_enabled|bool
     or
+    app_nzbget_enabled|bool
+    or
+    app_nzbhydra_enabled|bool
+    or
+    app_ombi_enabled|bool
+    or
+    app_overseerr_enabled|bool
+    or
     app_owncloud_enabled|bool
+    or
+    app_papermerge_enabled|bool
     or
     app_pihole_enabled|bool
     or
