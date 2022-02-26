@@ -1,1 +1,6 @@
 ---
+app_jellyfin_enabled: false
+app_jellyfin_puid: '16704'
+app_jellyfin_pgid: '16704'
+app_jellyfin_tz: "Europe/Zurich"
+app_jellyfin_dir: "/opt/app-jellyfin"
