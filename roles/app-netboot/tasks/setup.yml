@@ -1,1 +1,50 @@
 ---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_netboot_dir}}/config"
+    state: directory
+    owner: "{{app_netboot_puid}}"
+    group: "{{app_netboot_pgid}}"
+    mode: 0755
+
+- name: Create assets directory
+  ansible.builtin.file:
+    path: "{{app_netboot_dir}}/assets"
+    state: directory
+    owner: "{{app_netboot_puid}}"
+    group: "{{app_netboot_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/netbootxyz image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/netbootxyz
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove netbootxyz container
+  community.docker.docker_container:
+    name: netbootxyz
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on netbootxyz container
+  community.docker.docker_container_info:
+    name: netbootxyz
+  register: result
+
+- name: Create netbootxyz container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=netbootxyz \
+    -e PUID={{app_netboot_puid}} \
+    -e PGID={{app_netboot_pgid}} \
+    -v /{{app_netboot_dir}}/config:/config:Z \
+    -v /{{app_netboot_dir}}/assets:/assets:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/netbootxyz
+  when: 
+    pulled.changed
+    or
+    result.exists == false
