@@ -79,7 +79,6 @@
     - app-portainer
     - app-privatebin
     - app-prometheus
-    - app-pydio
     - app-pydio-cells
     - app-sonarqube
     - app-uptime-kuma
