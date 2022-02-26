@@ -1,0 +1,6 @@
+---
+app_mylar3_enabled: false
+app_mylar3_puid: '16704'
+app_mylar3_pgid: '16704'
+app_mylar3_tz: "Europe/Zurich"
+app_mylar3_dir: "/opt/app-mylar3"
