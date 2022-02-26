@@ -260,10 +260,70 @@ app_lidarr_dir: "/opt/app-lidarr"
 # App Loki
 app_loki_enabled: false
 
+# App Medusa
+app_medusa_enabled: false
+app_medusa_puid: '16704'
+app_medusa_pgid: '16704'
+app_medusa_tz: "Europe/Zurich"
+app_medusa_dir: "/opt/app-medusa"
+
+# App Mstream
+app_mstream_enabled: false
+app_mstream_puid: '16704'
+app_mstream_pgid: '16704'
+app_mstream_tz: "Europe/Zurich"
+app_mstream_dir: "/opt/app-mstream"
+
+# App Mylar
+app_mylar_enabled: false
+app_mylar_puid: '16704'
+app_mylar_pgid: '16704'
+app_mylar_tz: "Europe/Zurich"
+app_mylar_dir: "/opt/app-mylar3"
+
+# App Netboot
+app_netboot_enabled: false
+app_netboot_puid: '16704'
+app_netboot_pgid: '16704'
+app_netboot_dir: "/opt/app-netbootxyz"
+
 # App Nextcloud
 app_nextcloud_enabled: false
 app_nextcloud_puid: '16704'
 app_nextcloud_pgid: '16704'
+
+# App Nzbget
+app_nzbget_enabled: false
+app_nzbget_puid: '16704'
+app_nzbget_pgid: '16704'
+app_nzbget_tz: "Europe/Zurich"
+app_nzbget_dir: "/opt/app-nzbget"
+app_nzbget_user: "nzbget"
+app_nzbget_pass: "tegbzn6789"
+
+# App Nzbhydra
+app_nzbhydra_enabled: false
+app_nzbhydra_puid: '16704'
+app_nzbhydra_pgid: '16704'
+app_nzbhydra_tz: "Europe/Zurich"
+app_nzbhydra_dir: "/opt/app-nzbhydra2"
+app_nzbget_puid: '16704'
+app_nzbget_pgid: '16704'
+app_nzbget_dir: "/opt/app-nzbget"
+
+# App Ombi
+app_ombi_enabled: false
+app_ombi_puid: '16704'
+app_ombi_pgid: '16704'
+app_ombi_tz: "Europe/Zurich"
+app_ombi_dir: "/opt/app-ombi"
+
+# App Overseerr
+app_overseerr_enabled: false
+app_overseerr_puid: '16704'
+app_overseerr_pgid: '16704'
+app_overseerr_tz: "Europe/Zurich"
+app_overseerr_dir: "/opt/app-overseerr"
 
 # App Owncloud
 app_owncloud_enabled: false
@@ -292,6 +352,13 @@ app_owncloud_php_max_input_vars: ""
 app_owncloud_php_memory_limit: "512M"
 app_owncloud_php_post_max_size: "2G"
 app_owncloud_php_upload_max_filesize: "2G"
+
+# App Papermerge
+app_papermerge_enabled: false
+app_papermerge_puid: '16704'
+app_papermerge_pgid: '16704'
+app_papermerge_tz: "Europe/Zurich"
+app_papermerge_dir: "/opt/app-papermerge"
 
 # App Pi-Hole
 app_pihole_enabled: false
