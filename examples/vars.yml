@@ -54,6 +54,15 @@ app_boinc_pgid: '16704'
 app_boinc_tz: "Europe/Zurich"
 app_boinc_dir: "/opt/app-boinc"
 
+# App Calibre
+app_calibre_enabled: false
+app_calibre_puid: '16704'
+app_calibre_pgid: '16704'
+app_calibre_tz: "Europe/Zurich"
+app_calibre_dir: "/opt/app-calibre"
+app_calibre_password: ""
+app_calibre_cli_args: ""
+
 # App Couchpotato
 app_couchpotato_enabled: false
 app_couchpotato_puid: '16704'
@@ -91,12 +100,26 @@ app_duplicati_tz: "Europe/Zurich"
 app_duplicati_dir: "/opt/app-duplicati"
 app_duplicati_cli_args: ""
 
+# App Emby
+app_emby_enabled: false
+app_emby_puid: '16704'
+app_emby_pgid: '16704'
+app_emby_tz: "Europe/Zurich"
+app_emby_dir: "/opt/app-emby"
+
 # App Embystat
 app_embystat_enabled: false
 app_embystat_puid: '16704'
 app_embystat_pgid: '16704'
 app_embystat_tz: "Europe/Zurich"
 app_embystat_dir: "/opt/app-embystat"
+
+# App Emulatorjs
+app_emulatorjs_enabled: false
+app_emulatorjs_puid: '16704'
+app_emulatorjs_pgid: '16704'
+app_emulatorjs_tz: "Europe/Zurich"
+app_emulatorjs_dir: "/opt/app-emulatorjs"
 
 # App Endlessh
 app_endlessh_enabled: false
@@ -188,6 +211,12 @@ app_homeassistant_pgid: '16704'
 app_homeassistant_tz: "Europe/Zurich"
 app_homeassistant_dir: "/opt/app-homeassistant"
 
+# App Jellyfin
+app_jellyfin_enabled: false
+app_jellyfin_puid: '16704'
+app_jellyfin_pgid: '16704'
+app_jellyfin_tz: "Europe/Zurich"
+app_jellyfin_dir: "/opt/app-jellyfin"
 
 # App Jenkins
 app_jenkins_enabled: false
@@ -220,6 +249,13 @@ app_keycloak_keycloak_jgroups_transport_stack: "tcp"
 app_keycloak_keycloak_cache_owners_count: '1'
 app_keycloak_keycloak_auth_cache_owners_count: '1'
 app_keycloak_keycloak_enable_statistics: true
+
+# App Lidarr
+app_lidarr_enabled: false
+app_lidarr_puid: '16704'
+app_lidarr_pgid: '16704'
+app_lidarr_tz: "Europe/Zurich"
+app_lidarr_dir: "/opt/app-lidarr"
 
 # App Loki
 app_loki_enabled: false
@@ -318,6 +354,14 @@ app_prometheus_loki_password: ""
 app_prometheus_loki_urls: []
 app_prometheus_promtail_urls: []
 app_prometheus_node_exporter_urls: []
+
+# App Pydio-Cells
+app_pydio_enabled: false
+app_pydio_puid: '16704'
+app_pydio_pgid: '16704'
+app_pydio_tz: "Europe/Zurich"
+app_pydio_dir: "/opt/app-pydio"
+app_pydio_externalurl: "yourdomain.url"
 
 # App Sonarqube
 app_sonarqube_enabled: false
