@@ -1,1 +1,42 @@
 ---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_overseerr_dir}}/config"
+    state: directory
+    owner: "{{app_overseerr_puid}}"
+    group: "{{app_overseerr_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/overseerr image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/overseerr
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove overseerr container
+  community.docker.docker_container:
+    name: overseerr
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on overseerr container
+  community.docker.docker_container_info:
+    name: overseerr
+  register: result
+
+- name: Create overseerr container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=overseerr \
+    -e PUID={{app_overseerr_puid}} \
+    -e PGID={{app_overseerr_pgid}} \
+    -e TZ={{app_overseerr_tz}} \
+    -v /{{app_overseerr_dir}}/config:/config:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/overseerr
+  when: 
+    pulled.changed
+    or
+    result.exists == false
