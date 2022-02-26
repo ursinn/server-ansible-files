@@ -1,1 +1,44 @@
 ---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_librespeed_dir}}/config"
+    state: directory
+    owner: "{{app_librespeed_puid}}"
+    group: "{{app_librespeed_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/librespeed image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/librespeed
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove librespeed container
+  community.docker.docker_container:
+    name: librespeed
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on librespeed container
+  community.docker.docker_container_info:
+    name: librespeed
+  register: result
+
+- name: Create librespeed container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=librespeed \
+    -e PUID={{app_librespeed_puid}} \
+    -e PGID={{app_librespeed_pgid}} \
+    -e TZ={{app_librespeed_tz}} \
+    -e PASSWORD={{app_librespeed_password}} \
+    -e CUSTOM_RESULTS={{app_librespeed_custom_results}}
+    -v /{{app_librespeed_dir}}/config:/config:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/librespeed
+  when: 
+    pulled.changed
+    or
+    result.exists == false

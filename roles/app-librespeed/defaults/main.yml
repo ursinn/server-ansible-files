@@ -1,1 +1,8 @@
 ---
+app_librespeed_enabled: false
+app_librespeed_puid: '16704'
+app_librespeed_pgid: '16704'
+app_librespeed_tz: "Europe/Zurich"
+app_librespeed_dir: "/opt/app-librespeed"
+app_librespeed_password: "PASSWORD"
+app_librespeed_custom_results: false
