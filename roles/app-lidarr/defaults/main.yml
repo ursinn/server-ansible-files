@@ -1,1 +1,6 @@
 ---
+app_lidarr_enabled: false
+app_lidarr_puid: '16704'
+app_lidarr_pgid: '16704'
+app_lidarr_tz: "Europe/Zurich"
+app_lidarr_dir: "/opt/app-lidarr"
