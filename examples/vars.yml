@@ -63,6 +63,13 @@ app_calibre_dir: "/opt/app-calibre"
 app_calibre_password: ""
 app_calibre_cli_args: ""
 
+# App Calibre Web
+app_calibre_web_enabled: false
+app_calibre_web_puid: '16704'
+app_calibre_web_pgid: '16704'
+app_calibre_web_tz: "Europe/Zurich"
+app_calibre_web_dir: "/opt/app-calibre-web"
+
 # App Couchpotato
 app_couchpotato_enabled: false
 app_couchpotato_puid: '16704'
@@ -250,6 +257,22 @@ app_keycloak_keycloak_cache_owners_count: '1'
 app_keycloak_keycloak_auth_cache_owners_count: '1'
 app_keycloak_keycloak_enable_statistics: true
 
+# App Lazylibrarian
+app_lazylibrarian_enabled: false
+app_lazylibrarian_puid: '16704'
+app_lazylibrarian_pgid: '16704'
+app_lazylibrarian_tz: "Europe/Zurich"
+app_lazylibrarian_dir: "/opt/app-lazylibrarian"
+
+# Librespeed
+app_librespeed_enabled: false
+app_librespeed_puid: '16704'
+app_librespeed_pgid: '16704'
+app_librespeed_tz: "Europe/Zurich"
+app_librespeed_dir: "/opt/app-librespeed"
+app_librespeed_password: "PASSWORD"
+app_librespeed_custom_results: false
+
 # App Lidarr
 app_lidarr_enabled: false
 app_lidarr_puid: '16704'
@@ -429,6 +452,13 @@ app_pydio_pgid: '16704'
 app_pydio_tz: "Europe/Zurich"
 app_pydio_dir: "/opt/app-pydio"
 app_pydio_externalurl: "yourdomain.url"
+
+# App Snipe-it
+app_snipe_it_enabled: false
+app_snipe_it_puid: '16704'
+app_snipe_it_pgid: '16704'
+app_snipe_it_tz: "Europe/Zurich"
+app_snipe_it_dir: "/opt/app-snipe-it"
 
 # App Sonarqube
 app_sonarqube_enabled: false
