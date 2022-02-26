@@ -11,9 +11,13 @@
     or
     app_couchpotato_enabled|bool
     or
+    app_deluge_enabled|bool
+    or
     app_dillinger_enabled|bool
     or
     app_dokuwiki_enabled|bool
+    or
+    app_duplicati_enabled|bool
     or
     app_embystat_enabled|bool
     or
@@ -25,9 +29,15 @@
     or
     app_grocy_enabled|bool
     or
+    app_headphones_enabled|bool
+    or
+    app_healthchecks_enabled|bool
+    or
     app_hedgedoc_enabled|bool
     or
     app_heimdall_enabled|bool
+    or
+    app_homeassistant_enabled|bool
     or
     app_jenkins_enabled|bool
     or
@@ -38,6 +48,10 @@
     app_owncloud_enabled|bool
     or
     app_pihole_enabled|bool
+    or
+    app_piwigo_enabled|bool
+    or
+    app_plex_enabled|bool
     or
     app_prometheus_enabled|bool
     or
