@@ -1,1 +1,6 @@
 ---
+app_headphones_enabled: false
+app_headphones_puid: '16704'
+app_headphones_pgid: '16704'
+app_headphones_tz: "Europe/Zurich"
+app_headphones_dir: "/opt/app-headphones"
