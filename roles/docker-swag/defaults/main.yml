@@ -52,6 +52,7 @@ app_piwigo_enabled: false
 app_plex_enabled: false
 app_prometheus_enabled: false
 app_pydio_enabled: false
+app_smokeping_enabled: false
 app_snipe_it_enabled: false
 app_sonarqube_enabled: false
 app_uptime_kuma_enabled: false

@@ -91,6 +91,8 @@
     or
     app_pydio_enabled|bool
     or
+    app_smokeping_enabled|bool
+    or
     app_snipe_it_enabled|bool
     or
     app_sonarqube_enabled|bool
