@@ -1,0 +1,69 @@
+---
+- name: Create app network
+  community.docker.docker_network:
+    name: app-network
+
+- name: Create data directory
+  ansible.builtin.file:
+    path: /opt/docker-mariadb/data
+    state: directory
+    owner: '1001'
+    group: '1001'
+    mode: 0755
+
+- name: Ensure bitnami/mariadb image is pulled
+  community.docker.docker_image:
+    name: docker.io/bitnami/mariadb
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove mariadb container
+  community.docker.docker_container:
+    name: mariadb
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on mariadb container
+  community.docker.docker_container_info:
+    name: mariadb
+  register: result
+
+- name: Create mariadb container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=mariadb \
+    -e ALLOW_EMPTY_PASSWORD={{docker_mariadb_allow_empty_password}} \
+    -e MARIADB_EXTRA_FLAGS={{docker_mariadb_extra_flags}} \
+    -e MARIADB_CHARACTER_SET={{docker_mariadb_character_set}} \
+    -e MARIADB_COLLATE={{docker_mariadb_collate}} \
+    -e MARIADB_ROOT_USER={{docker_mariadb_root_username}} \
+    -e MARIADB_ROOT_PASSWORD={{docker_mariadb_root_password}} \
+    -e MARIADB_USER={{docker_mariadb_username}} \
+    -e MARIADB_PASSWORD={{docker_mariadb_password}} \
+    -e MARIADB_DATABASE={{docker_mariadb_database}} \
+    -e MARIADB_SKIP_TEST_DB=yes \
+    -e MARIADB_REPLICATION_MODE={{docker_mariadb_replication_mode}} \
+    -e MARIADB_REPLICATION_USER={{docker_mariadb_replication_user}} \
+    -e MARIADB_REPLICATION_PASSWORD={{docker_mariadb_replication_password}} \
+    -e MARIADB_MASTER_HOST={{docker_mariadb_master_host}} \
+    -e MARIADB_MASTER_PORT_NUMBER={{docker_mariadb_master_port_number}} \
+    -e MARIADB_MASTER_ROOT_USER={{docker_mariadb_master_root_user}} \
+    -e MARIADB_MASTER_ROOT_PASSWORD={{docker_mariadb_master_root_password}} \
+    -v /opt/docker-mariadb/data:/bitnami/mariadb:Z \
+    -p 3306:3306 \
+    --network=app-network \
+    --restart unless-stopped \
+    docker.io/bitnami/mariadb
+  when:
+    pulled.changed
+    or
+    result.exists == false
+
+- name: Add mariadb container to bridge network
+  ansible.builtin.shell:
+    cmd: "docker network connect bridge mariadb"
+  when:
+    pulled.changed
+    or
+    result.exists == false

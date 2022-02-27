@@ -1,0 +1,19 @@
+---
+docker_mariadb_allow_empty_password: "yes"
+docker_mariadb_extra_flags: ""
+docker_mariadb_character_set: "utf8"
+docker_mariadb_collate: "utf8_general_ci"
+docker_mariadb_root_username: "root"
+docker_mariadb_root_password: ""
+docker_mariadb_username: ""
+docker_mariadb_password: ""
+docker_mariadb_database: ""
+docker_mariadb_replication_mode: ""
+docker_mariadb_replication_user: ""
+docker_mariadb_replication_password: ""
+docker_mariadb_master_host: ""
+docker_mariadb_master_port_number: '3306'
+docker_mariadb_master_root_user: "root"
+docker_mariadb_master_root_password: ""
+
+app_owncloud_enabled: false
