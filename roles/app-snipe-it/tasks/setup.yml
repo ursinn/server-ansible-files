@@ -29,9 +29,14 @@
   ansible.builtin.shell: |
     docker run -d \
     --name=snipe-it \
+    -e NGINX_APP_URL={{app_snipe_it_nginx_app_url}} \
+    -e MYSQL_PORT_3306_TCP_ADDR={{app_snipe_it_mysql_port_3306_tcp_addr}} \
+    -e MYSQL_PORT_3306_TCP_PORT={{app_snipe_it_mysql_port_3306_tcp_port}} \
+    -e MYSQL_DATABASE={{app_snipe_it_mysql_database}} \
+    -e MYSQL_USER={{app_snipe_it_mysql_user}} \
+    -e MYSQL_PASSWORD={{app_snipe_it_mysql_password}} \
     -e PUID={{app_snipe_it_puid}} \
     -e PGID={{app_snipe_it_pgid}} \
-    -e TZ={{app_snipe_it_tz}} \
     -v /{{app_snipe_it_dir}}/config:/config:Z \
     --network=app-network \
     --restart unless-stopped \
