@@ -16,4 +16,5 @@ docker_mariadb_master_port_number: '3306'
 docker_mariadb_master_root_user: "root"
 docker_mariadb_master_root_password: ""
 
+app_hedgedoc_enabled: false
 app_owncloud_enabled: false
