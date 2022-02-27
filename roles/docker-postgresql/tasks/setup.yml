@@ -3,7 +3,7 @@
   community.docker.docker_network:
     name: app-network
 
-- name: Create directorys
+- name: Create data directory
   ansible.builtin.file:
     path: /opt/docker-postgresql/data
     state: directory
