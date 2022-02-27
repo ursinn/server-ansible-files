@@ -1,0 +1,51 @@
+---
+- name: Create config directory
+  ansible.builtin.file:
+    path: "{{app_smokeping_dir}}/config"
+    state: directory
+    owner: "{{app_smokeping_puid}}"
+    group: "{{app_smokeping_pgid}}"
+    mode: 0755
+
+- name: Create data directory
+  ansible.builtin.file:
+    path: "{{app_smokeping_dir}}/data"
+    state: directory
+    owner: "{{app_smokeping_puid}}"
+    group: "{{app_smokeping_pgid}}"
+    mode: 0755
+
+- name: Ensure linuxserver/smokeping image is pulled
+  community.docker.docker_image:
+    name: lscr.io/linuxserver/smokeping
+    source: pull
+    force_source: yes
+  register: pulled
+
+- name: Remove smokeping container
+  community.docker.docker_container:
+    name: smokeping
+    state: absent
+  when: pulled.changed
+
+- name: Get infos on smokeping container
+  community.docker.docker_container_info:
+    name: smokeping
+  register: result
+
+- name: Create smokeping container
+  ansible.builtin.shell: |
+    docker run -d \
+    --name=smokeping \
+    -e PUID={{app_smokeping_puid}} \
+    -e PGID={{app_smokeping_pgid}} \
+    -e TZ={{app_smokeping_tz}} \
+    -v /{{app_smokeping_dir}}/config:/config:Z \
+    -v /{{app_smokeping_dir}}/data:/data:Z \
+    --network=app-network \
+    --restart unless-stopped \
+    lscr.io/linuxserver/smokeping
+  when: 
+    pulled.changed
+    or
+    result.exists == false
