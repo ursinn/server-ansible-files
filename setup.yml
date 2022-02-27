@@ -79,6 +79,7 @@
     - app-privatebin
     - app-prometheus
     - app-pydio-cells
+    - app-smokeping
     - app-snipe-it
     - app-sonarqube
     - app-uptime-kuma
