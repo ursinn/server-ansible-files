@@ -19,6 +19,7 @@
     # Customize
     - custom-oh-my-zsh
     # Docker App Helper
+    - docker-mariadb
     - docker-postgresql
     - docker-redis
     - docker-swag
