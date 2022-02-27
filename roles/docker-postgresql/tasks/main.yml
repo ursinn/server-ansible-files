@@ -1,8 +1,6 @@
 ---
 - include_tasks: "{{ role_path }}/tasks/setup.yml"
   when: 
-    app_hedgedoc_enabled|bool
-    or
     app_keycloak_enabled|bool
     or
     app_sonarqube_enabled|bool
