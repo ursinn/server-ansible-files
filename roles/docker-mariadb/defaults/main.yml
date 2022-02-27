@@ -18,3 +18,4 @@ docker_mariadb_master_root_password: ""
 
 app_hedgedoc_enabled: false
 app_owncloud_enabled: false
+app_snipe_it_enabled: false
