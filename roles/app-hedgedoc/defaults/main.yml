@@ -2,8 +2,8 @@
 app_hedgedoc_enabled: false
 app_hedgedoc_puid: '16704'
 app_hedgedoc_pgid: '16704'
-app_hedgedoc_db_host: "postgresql"
-app_hedgedoc_db_port: '5432'
+app_hedgedoc_db_host: "mariadb"
+app_hedgedoc_db_port: '3306'
 app_hedgedoc_db_user: "hedgedoc"
 app_hedgedoc_db_pass: ""
 app_hedgedoc_db_name: "hedgedoc"
