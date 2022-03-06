@@ -59,7 +59,8 @@
     -e WEB_PORT={{app_pihole_web_port}} \
     -e SKIPGRAVITYONBOOT={{app_pihole_skipgravityonboot}} \
     -e DNSMASQ_USER={{app_pihole_dnsmasq_user}} \
-    -v /opt/app-pihole/data:/etc/pihole:Z \
+    -v /opt/app-pihole/etc-pihole:/etc/pihole:Z \
+    -v /opt/app-pihole/etc-dnsmasq.d:/etc/dnsmasq.d:Z \
     -p 53:53 \
     --network=app-network \
     --restart unless-stopped \
