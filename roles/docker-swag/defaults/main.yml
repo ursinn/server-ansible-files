@@ -5,6 +5,7 @@ docker_swag_tz: "Europe/Zurich"
 docker_swag_dir: "/opt/docker-swag"
 docker_swag_htpasswd: ""
 docker_swag_url: ""
+docker_swag_extra_domains: ""
 docker_swag_force: "yes"
 
 app_archisteamfarm_enabled: false

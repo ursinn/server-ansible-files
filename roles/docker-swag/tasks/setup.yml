@@ -148,6 +148,7 @@
     -e VALIDATION=dns \
     -e DNSPLUGIN=cloudflare \
     -e ONLY_SUBDOMAINS=true \
+    -e EXTRA_DOMAINS={{docker_swag_extra_domains}} \
     -v {{docker_swag_dir}}/config:/config:Z \
     -p 80:80 \
     -p 443:443 \
