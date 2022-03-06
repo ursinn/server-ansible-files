@@ -67,7 +67,9 @@
     -e DNSMASQ_USER={{app_pihole_unbound_dnsmasq_user}} \
     -v /opt/app-pihole-unbound/etc-pihole:/etc/pihole:Z \
     -v /opt/app-pihole-unbound/etc-dnsmasq.d:/etc/dnsmasq.d:Z \
-    -p 53:53 \
+    -p 53:53/tcp \
+    -p 53:53/udp \
+    -p 67:67/udp \
     --network=app-network \
     --restart unless-stopped \
     docker.io/cbcrowe/pihole-unbound
