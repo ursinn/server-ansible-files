@@ -24,7 +24,7 @@ app_pihole_virtual_host: "$ServerIP"
 app_pihole_ipv6: "true"
 app_pihole_temperatureunit: "c"
 app_pihole_webuiboxedlayout: "boxed"
-app_pihole_query_logging: "true"
+app_pihole_query_logging: true
 app_pihole_serveripv6: ""
 app_pihole_interface: ""
 app_pihole_dnsmasq_listening: ""

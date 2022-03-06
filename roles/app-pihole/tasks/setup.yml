@@ -1,7 +1,13 @@
 ---
-- name: Create data directory
+- name: Create pihole data directory
   ansible.builtin.file:
-    path: /opt/app-pihole/data
+    path: /opt/app-pihole/etc-pihole
+    state: directory
+    mode: 0755
+
+- name: Create dnsmasq.d data directory
+  ansible.builtin.file:
+    path: /opt/app-pihole/etc-dnsmasq.d
     state: directory
     mode: 0755
 
