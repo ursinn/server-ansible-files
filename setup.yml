@@ -74,6 +74,7 @@
     - app-owncloud
     - app-papermerge
     - app-pihole
+    - app-pihole-unbound
     - app-piwigo
     - app-plex
     - app-portainer
