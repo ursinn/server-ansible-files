@@ -5,15 +5,15 @@
   become: true
 
   roles:
-    - system_ssh
-    - system_update
-    - system_setup
+    - system-ssh
+    - system-update
+    - system-setup
     - ansible-role-pip
     - ansible-role-firewall
-    - system_fail2ban
+    - system-fail2ban
     - ansible-role-docker
-    - system_docker
-    - system_promtail
+    - system-docker
+    - system-promtail
     - ansible-role-oh-my-zsh
     - ansible-node-exporter
     # Customize
