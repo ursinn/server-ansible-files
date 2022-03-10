@@ -1,5 +1,5 @@
 ---
-app_pihole_unbound_unbound_enabled: false
+app_pihole_unbound_enabled: false
 app_pihole_unbound_tz: "Europe/Zurich"
 app_pihole_unbound_webpassword: ""
 app_pihole_unbound_serverip: ""
