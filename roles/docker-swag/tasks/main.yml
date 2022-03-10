@@ -83,6 +83,8 @@
     or
     app_pihole_enabled|bool
     or
+    app_pihole_unbound_enabled|bool
+    or
     app_piwigo_enabled|bool
     or
     app_plex_enabled|bool

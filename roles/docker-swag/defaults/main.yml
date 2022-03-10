@@ -49,6 +49,7 @@ app_overseerr_enabled: false
 app_owncloud_enabled: false
 app_papermerge_enabled: false
 app_pihole_enabled: false
+app_pihole_unbound_enabled: false
 app_piwigo_enabled: false
 app_plex_enabled: false
 app_prometheus_enabled: false
