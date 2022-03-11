@@ -1,13 +1,7 @@
 ---
-- name: Create pihole data directory
+- name: Create pihole unbound directory
   ansible.builtin.file:
-    path: /opt/app-pihole-unbound/etc-pihole
-    state: directory
-    mode: 0755
-
-- name: Create dnsmasq.d data directory
-  ansible.builtin.file:
-    path: /opt/app-pihole-unbound/etc-dnsmasq.d
+    path: /opt/app-pihole-unbound
     state: directory
     mode: 0755
 
