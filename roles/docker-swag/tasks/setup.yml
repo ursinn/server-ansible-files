@@ -145,8 +145,8 @@
     -e TZ={{docker_swag_tz}} \
     -e URL={{docker_swag_url}} \
     -e SUBDOMAINS=wildcard \
-    -e VALIDATION=dns \
-    -e DNSPLUGIN=cloudflare \
+    -e VALIDATION={{docker_swag_validation}} \
+    -e DNSPLUGIN={{docker_swag_dnsplugin}} \
     -e ONLY_SUBDOMAINS=true \
     -e EXTRA_DOMAINS={{docker_swag_extra_domains}} \
     -v {{docker_swag_dir}}/config:/config:Z \

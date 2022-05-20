@@ -7,6 +7,8 @@ docker_swag_htpasswd: ""
 docker_swag_url: ""
 docker_swag_extra_domains: ""
 docker_swag_force: "yes"
+docker_swag_validation: "dns"
+docker_swag_dnsplugin: "cloudflare"
 
 app_archisteamfarm_enabled: false
 app_bazarr_enabled: false
