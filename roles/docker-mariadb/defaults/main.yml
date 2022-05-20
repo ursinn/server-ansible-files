@@ -1,4 +1,5 @@
 ---
+docker_mariadb_enabled: false
 docker_mariadb_allow_empty_password: "yes"
 docker_mariadb_extra_flags: ""
 docker_mariadb_character_set: "utf8"

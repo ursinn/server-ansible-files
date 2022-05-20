@@ -548,6 +548,7 @@ app_sonarqube_sonarqube_smtp_protocol: ""
 app_uptime_kuma_enabled: false
 
 # Docker Mariadb
+docker_mariadb_enabled: false
 docker_mariadb_allow_empty_password: "yes"
 docker_mariadb_extra_flags: ""
 docker_mariadb_character_set: "utf8"
@@ -566,6 +567,7 @@ docker_mariadb_master_root_user: "root"
 docker_mariadb_master_root_password: ""
 
 # Docker Postgresql
+docker_postgresql_enabled: false
 docker_postgresql_allow_empty_password: "yes"
 docker_postgresql_username: ""
 docker_postgresql_password: ""

@@ -1,6 +1,8 @@
 ---
 - include_tasks: "{{ role_path }}/tasks/setup.yml"
   when: 
+    docker_postgresql_enabled|bool
+    or
     app_keycloak_enabled|bool
     or
     app_sonarqube_enabled|bool
