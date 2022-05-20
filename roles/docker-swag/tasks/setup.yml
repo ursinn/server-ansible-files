@@ -144,10 +144,10 @@
     -e PGID={{docker_swag_pgid}} \
     -e TZ={{docker_swag_tz}} \
     -e URL={{docker_swag_url}} \
-    -e SUBDOMAINS=wildcard \
+    -e SUBDOMAINS={{docker_swag_subdomains}} \
     -e VALIDATION={{docker_swag_validation}} \
     -e DNSPLUGIN={{docker_swag_dnsplugin}} \
-    -e ONLY_SUBDOMAINS=true \
+    -e ONLY_SUBDOMAINS={{docker_swag_only_subdomains}} \
     -e EXTRA_DOMAINS={{docker_swag_extra_domains}} \
     -v {{docker_swag_dir}}/config:/config:Z \
     -p 80:80 \
