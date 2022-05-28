@@ -24,6 +24,7 @@
     - docker-redis
     - docker-swag
     # Apps
+    - ansible-role-nextcloud
     - app-archisteamfarm
     - app-bazarr
     - app-beets
@@ -66,7 +67,6 @@
     - app-mstream
     - app-mylar3
     - app-netbootxyz
-    - app-nextcloud
     - app-nzbget
     - app-nzbhydra
     - app-ombi

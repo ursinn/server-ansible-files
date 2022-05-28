@@ -1,6 +1,6 @@
 [submodule "roles/ansible-role-oh-my-zsh"]
 	path = roles/ansible-role-oh-my-zsh
-	url = https://github.com/ursinn/ansible-role-oh-my-zsh
+	url = https://github.com/ursinn/ansible-role-oh-my-zsh.git
 [submodule "roles/ansible-node-exporter"]
 	path = roles/ansible-node-exporter
 	url = https://github.com/cloudalchemy/ansible-node-exporter.git
@@ -13,3 +13,6 @@
 [submodule "roles/ansible-role-firewall"]
 	path = roles/ansible-role-firewall
 	url = https://github.com/ursinn/ansible-role-firewall.git
+[submodule "roles/ansible-role-nextcloud"]
+	path = roles/ansible-role-nextcloud
+	url = https://github.com/ursinn/ansible-role-nextcloud.git
