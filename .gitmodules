@@ -31,9 +31,9 @@
 [submodule "roles/ansible-role-swag"]
 	path = roles/ansible-role-swag
 	url = https://github.com/ursinn/ansible-role-swag.git
-[submodule "roles/roles/ansible-role-docker2"]
-	path = roles/roles/ansible-role-docker2
+[submodule "roles/ansible-role-docker2"]
+	path = roles/ansible-role-docker2
 	url = https://github.com/ursinn/ansible-role-docker2.git
-[submodule "roles/roles/ansible-role-ssh"]
-	path = roles/roles/ansible-role-ssh
+[submodule "roles/ansible-role-ssh"]
+	path = roles/ansible-role-ssh
 	url = https://github.com/ursinn/ansible-role-ssh.git
