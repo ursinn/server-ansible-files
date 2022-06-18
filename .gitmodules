@@ -37,3 +37,6 @@
 [submodule "roles/ansible-role-ssh"]
 	path = roles/ansible-role-ssh
 	url = https://github.com/ursinn/ansible-role-ssh.git
+[submodule "roles/ansible-role-update"]
+	path = roles/ansible-role-update
+	url = https://github.com/ursinn/ansible-role-update.git
