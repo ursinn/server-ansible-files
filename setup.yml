@@ -16,8 +16,6 @@
     - ansible-role-promtail
     - ansible-role-oh-my-zsh
     - ansible-role-node-exporter
-    # Customize
-    - ansible-role-oh-my-zsh2
     # Docker App Helper
     - ansible-role-mariadb
     - ansible-role-postgresql

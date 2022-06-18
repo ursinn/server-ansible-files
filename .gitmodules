@@ -1,9 +1,52 @@
 [submodule "roles/ansible-role-archisteamfarm"]
 	path = roles/ansible-role-archisteamfarm
 	url = https://github.com/ursinn/ansible-role-archisteamfarm.git
+[submodule "roles/ansible-role-bazarr"]
+	path = roles/ansible-role-bazarr
+	url = https://github.com/ursinn/ansible-role-bazarr.git
+[submodule "roles/ansible-role-beets"]
+	path = roles/ansible-role-beets
+	url = https://github.com/ursinn/ansible-role-beets.git
+[submodule "roles/ansible-role-boinc"]
+	path = roles/ansible-role-boinc
+	url = https://github.com/ursinn/ansible-role-boinc.git
+[submodule "roles/ansible-role-booksonic"]
+	path = roles/ansible-role-booksonic
+	url = https://github.com/ursinn/ansible-role-booksonic.git
+[submodule "roles/ansible-role-bookstack"]
+	path = roles/ansible-role-bookstack
+	url = https://github.com/ursinn/ansible-role-bookstack.git
+[submodule "roles/ansible-role-calibre"]
+	path = roles/ansible-role-calibre
+	url = https://github.com/ursinn/ansible-role-calibre.git
+[submodule "roles/ansible-role-calibre-web"]
+	path = roles/ansible-role-calibre-web
+	url = https://github.com/ursinn/ansible-role-calibre-web.git
+[submodule "roles/ansible-role-chevereto"]
+	path = roles/ansible-role-chevereto
+	url = https://github.com/ursinn/ansible-role-chevereto.git
+[submodule "roles/ansible-role-couchpotato"]
+	path = roles/ansible-role-couchpotato
+	url = https://github.com/ursinn/ansible-role-couchpotato.git
+[submodule "roles/ansible-role-deluge"]
+	path = roles/ansible-role-deluge
+	url = https://github.com/ursinn/ansible-role-deluge.git
+[submodule "roles/ansible-role-dillinger"]
+	path = roles/ansible-role-dillinger
+	url = https://github.com/ursinn/ansible-role-dillinger.git
 [submodule "roles/ansible-role-docker"]
 	path = roles/ansible-role-docker
 	url = https://github.com/ursinn/ansible-role-docker.git
+[submodule "roles/ansible-role-docker-custom"]
+	path = roles/ansible-role-docker-custom
+	url = https://github.com/ursinn/ansible-role-docker-custom.git
+[submodule "roles/ansible-role-dokuwiki"]
+	path = roles/ansible-role-dokuwiki
+	url = https://github.com/ursinn/ansible-role-dokuwiki.git
+[submodule "roles/ansible-role-duplicati"]
+	path = roles/ansible-role-duplicati
+	url = https://github.com/ursinn/ansible-role-duplicati.git
+
 [submodule "roles/ansible-role-fail2ban"]
 	path = roles/ansible-role-fail2ban
 	url = https://github.com/ursinn/ansible-role-fail2ban.git
@@ -31,9 +74,6 @@
 [submodule "roles/ansible-role-swag"]
 	path = roles/ansible-role-swag
 	url = https://github.com/ursinn/ansible-role-swag.git
-[submodule "roles/ansible-role-docker2"]
-	path = roles/ansible-role-docker2
-	url = https://github.com/ursinn/ansible-role-docker2.git
 [submodule "roles/ansible-role-ssh"]
 	path = roles/ansible-role-ssh
 	url = https://github.com/ursinn/ansible-role-ssh.git
