@@ -1,6 +1,0 @@
----
-app_smokeping_enabled: false
-app_smokeping_puid: '16704'
-app_smokeping_pgid: '16704'
-app_smokeping_tz: "Europe/Zurich"
-app_smokeping_dir: "/opt/app-smokeping"

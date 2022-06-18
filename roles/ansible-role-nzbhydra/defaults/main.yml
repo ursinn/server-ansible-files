@@ -1,9 +1,0 @@
----
-app_nzbhydra_enabled: false
-app_nzbhydra_puid: '16704'
-app_nzbhydra_pgid: '16704'
-app_nzbhydra_tz: "Europe/Zurich"
-app_nzbhydra_dir: "/opt/app-nzbhydra2"
-app_nzbget_puid: '16704'
-app_nzbget_pgid: '16704'
-app_nzbget_dir: "/opt/app-nzbget"

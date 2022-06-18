@@ -80,9 +80,53 @@
 	path = roles/ansible-role-grocy
 	url = https://github.com/ursinn/ansible-role-grocy.git
 
+[submodule "roles/ansible-role-guacamole"]
+	path = roles/ansible-role-guacamole
+	url = https://github.com/ursinn/ansible-role-guacamole.git
+[submodule "roles/ansible-role-headphones"]
+	path = roles/ansible-role-headphones
+	url = https://github.com/ursinn/ansible-role-headphones.git
+[submodule "roles/ansible-role-healthchecks"]
+	path = roles/ansible-role-healthchecks
+	url = https://github.com/ursinn/ansible-role-healthchecks.git
+[submodule "roles/ansible-role-hedgedoc"]
+	path = roles/ansible-role-hedgedoc
+	url = https://github.com/ursinn/ansible-role-hedgedoc.git
+[submodule "roles/ansible-role-heimdall"]
+	path = roles/ansible-role-heimdall
+	url = https://github.com/ursinn/ansible-role-heimdall.git
+[submodule "roles/ansible-role-homeassistant"]
+	path = roles/ansible-role-homeassistant
+	url = https://github.com/ursinn/ansible-role-homeassistant.git
+[submodule "roles/ansible-role-influxdb"]
+	path = roles/ansible-role-influxdb
+	url = https://github.com/ursinn/ansible-role-influxdb.git
+[submodule "roles/ansible-role-jellyfin"]
+	path = roles/ansible-role-jellyfin
+	url = https://github.com/ursinn/ansible-role-jellyfin.git
+[submodule "roles/ansible-role-jenkins"]
+	path = roles/ansible-role-jenkins
+	url = https://github.com/ursinn/ansible-role-jenkins.git
+[submodule "roles/ansible-role-keycloak"]
+	path = roles/ansible-role-keycloak
+	url = https://github.com/ursinn/ansible-role-keycloak.git
+[submodule "roles/ansible-role-lazylibrarian"]
+	path = roles/ansible-role-lazylibrarian
+	url = https://github.com/ursinn/ansible-role-lazylibrarian.git
+[submodule "roles/ansible-role-librespeed"]
+	path = roles/ansible-role-librespeed
+	url = https://github.com/ursinn/ansible-role-librespeed.git
+[submodule "roles/ansible-role-lidarr"]
+	path = roles/ansible-role-lidarr
+	url = https://github.com/ursinn/ansible-role-lidarr.git
 [submodule "roles/ansible-role-loki"]
 	path = roles/ansible-role-loki
 	url = https://github.com/ursinn/ansible-role-loki.git
+[submodule "roles/ansible-role-lychee"]
+	path = roles/ansible-role-lychee
+	url = https://github.com/ursinn/ansible-role-lychee.git
+
+
 [submodule "roles/ansible-role-nextcloud"]
 	path = roles/ansible-role-nextcloud
 	url = https://github.com/ursinn/ansible-role-nextcloud.git

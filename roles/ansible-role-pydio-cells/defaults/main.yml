@@ -1,7 +1,0 @@
----
-app_pydio_enabled: false
-app_pydio_puid: '16704'
-app_pydio_pgid: '16704'
-app_pydio_tz: "Europe/Zurich"
-app_pydio_dir: "/opt/app-pydio-cell"
-app_pydio_externalurl: "yourdomain.url"

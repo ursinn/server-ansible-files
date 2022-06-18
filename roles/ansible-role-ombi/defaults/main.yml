@@ -1,6 +1,0 @@
----
-app_ombi_enabled: false
-app_ombi_puid: '16704'
-app_ombi_pgid: '16704'
-app_ombi_tz: "Europe/Zurich"
-app_ombi_dir: "/opt/app-ombi"

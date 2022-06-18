@@ -1,6 +1,0 @@
----
-app_plex_enabled: false
-app_plex_puid: '16704'
-app_plex_pgid: '16704'
-app_plex_tz: "Europe/Zurich"
-app_plex_dir: "/opt/app-plex"

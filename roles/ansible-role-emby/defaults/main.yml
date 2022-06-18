@@ -1,6 +1,0 @@
----
-app_emby_enabled: false
-app_emby_puid: '16704'
-app_emby_pgid: '16704'
-app_emby_tz: "Europe/Zurich"
-app_emby_dir: "/opt/app-emby"

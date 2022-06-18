@@ -1,6 +1,0 @@
----
-app_papermerge_enabled: false
-app_papermerge_puid: '16704'
-app_papermerge_pgid: '16704'
-app_papermerge_tz: "Europe/Zurich"
-app_papermerge_dir: "/opt/app-papermerge"

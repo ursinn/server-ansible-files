@@ -1,5 +1,0 @@
----
-app_jenkins_enabled: false
-app_jenkins_username: "user"
-app_jenkins_password: "bitnami"
-app_jenkins_email: "user@example.com"

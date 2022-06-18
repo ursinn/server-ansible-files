@@ -1,7 +1,0 @@
----
-app_duplicati_enabled: false
-app_duplicati_puid: '16704'
-app_duplicati_pgid: '16704'
-app_duplicati_tz: "Europe/Zurich"
-app_duplicati_dir: "/opt/app-duplicati"
-app_duplicati_cli_args: ""

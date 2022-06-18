@@ -1,6 +1,0 @@
----
-app_mstream_enabled: false
-app_mstream_puid: '16704'
-app_mstream_pgid: '16704'
-app_mstream_tz: "Europe/Zurich"
-app_mstream_dir: "/opt/app-mstream"

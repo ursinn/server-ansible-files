@@ -1,6 +1,0 @@
----
-app_freshrss_enabled: false
-app_freshrss_puid: '16704'
-app_freshrss_pgid: '16704'
-app_freshrss_tz: "Europe/Zurich"
-app_freshrss_dir: "/opt/app-freshrss"

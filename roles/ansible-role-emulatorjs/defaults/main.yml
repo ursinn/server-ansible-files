@@ -1,6 +1,0 @@
----
-app_emulatorjs_enabled: false
-app_emulatorjs_puid: '16704'
-app_emulatorjs_pgid: '16704'
-app_emulatorjs_tz: "Europe/Zurich"
-app_emulatorjs_dir: "/opt/app-emulatorjs"

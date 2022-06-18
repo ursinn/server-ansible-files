@@ -1,8 +1,0 @@
----
-app_nzbget_enabled: false
-app_nzbget_puid: '16704'
-app_nzbget_pgid: '16704'
-app_nzbget_tz: "Europe/Zurich"
-app_nzbget_dir: "/opt/app-nzbget"
-app_nzbget_user: "nzbget"
-app_nzbget_pass: "tegbzn6789"

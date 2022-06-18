@@ -1,6 +1,0 @@
----
-app_overseerr_enabled: false
-app_overseerr_puid: '16704'
-app_overseerr_pgid: '16704'
-app_overseerr_tz: "Europe/Zurich"
-app_overseerr_dir: "/opt/app-overseerr"
