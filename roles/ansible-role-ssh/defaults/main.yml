@@ -1,8 +1,0 @@
----
-# Service options.
-system_ssh_service_state: started
-system_ssh_service_enabled: true
-system_ssh_restart_handler_state: restarted
-
-system_ssh_user: ""
-system_ssh_user_key: ""
