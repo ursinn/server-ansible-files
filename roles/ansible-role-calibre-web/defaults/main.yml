@@ -1,6 +1,0 @@
----
-app_calibre_web_enabled: false
-app_calibre_web_puid: '16704'
-app_calibre_web_pgid: '16704'
-app_calibre_web_tz: "Europe/Zurich"
-app_calibre_web_dir: "/opt/app-calibre-web"

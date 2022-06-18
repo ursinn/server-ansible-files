@@ -1,7 +1,0 @@
----
-app_deluge_enabled: false
-app_deluge_puid: '16704'
-app_deluge_pgid: '16704'
-app_deluge_tz: "Europe/Zurich"
-app_deluge_dir: "/opt/app-deluge"
-app_deluge_loglevel: "error"

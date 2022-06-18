@@ -1,6 +1,0 @@
----
-app_couchpotato_enabled: false
-app_couchpotato_puid: '16704'
-app_couchpotato_pgid: '16704'
-app_couchpotato_tz: "Europe/Zurich"
-app_couchpotato_dir: "/opt/app-couchpotato"
