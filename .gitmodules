@@ -79,7 +79,6 @@
 [submodule "roles/ansible-role-grocy"]
 	path = roles/ansible-role-grocy
 	url = https://github.com/ursinn/ansible-role-grocy.git
-
 [submodule "roles/ansible-role-guacamole"]
 	path = roles/ansible-role-guacamole
 	url = https://github.com/ursinn/ansible-role-guacamole.git
@@ -125,38 +124,105 @@
 [submodule "roles/ansible-role-lychee"]
 	path = roles/ansible-role-lychee
 	url = https://github.com/ursinn/ansible-role-lychee.git
-
-
+[submodule "roles/ansible-role-mariadb"]
+	path = roles/ansible-role-mariadb
+	url = https://github.com/ursinn/ansible-role-mariadb.git
+[submodule "roles/ansible-role-medusa"]
+	path = roles/ansible-role-medusa
+	url = https://github.com/ursinn/ansible-role-medusa.git
+[submodule "roles/ansible-role-mstream"]
+	path = roles/ansible-role-mstream
+	url = https://github.com/ursinn/ansible-role-mstream.git
+[submodule "roles/ansible-role-mylar3"]
+	path = roles/ansible-role-mylar3
+	url = https://github.com/ursinn/ansible-role-mylar3.git
+[submodule "roles/ansible-role-netbootxyz"]
+	path = roles/ansible-role-netbootxyz
+	url = https://github.com/ursinn/ansible-role-netbootxyz.git
 [submodule "roles/ansible-role-nextcloud"]
 	path = roles/ansible-role-nextcloud
 	url = https://github.com/ursinn/ansible-role-nextcloud.git
 [submodule "roles/ansible-role-node-exporter"]
 	path = roles/ansible-role-node-exporter
 	url = https://github.com/ursinn/ansible-role-node-exporter.git
+[submodule "roles/ansible-role-nzbget"]
+	path = roles/ansible-role-nzbget
+	url = https://github.com/ursinn/ansible-role-nzbget.git
+[submodule "roles/ansible-role-nzbhydra"]
+	path = roles/ansible-role-nzbhydra
+	url = https://github.com/ursinn/ansible-role-nzbhydra.git
 [submodule "roles/ansible-role-oh-my-zsh"]
 	path = roles/ansible-role-oh-my-zsh
 	url = https://github.com/ursinn/ansible-role-oh-my-zsh.git
-[submodule "roles/ansible-role-pip"]
-	path = roles/ansible-role-pip
-	url = https://github.com/ursinn/ansible-role-pip.git
-[submodule "roles/ansible-role-promtail"]
-	path = roles/ansible-role-promtail
-	url = https://github.com/ursinn/ansible-role-promtail.git
-[submodule "roles/ansible-role-swag"]
-	path = roles/ansible-role-swag
-	url = https://github.com/ursinn/ansible-role-swag.git
-[submodule "roles/ansible-role-ssh"]
-	path = roles/ansible-role-ssh
-	url = https://github.com/ursinn/ansible-role-ssh.git
-[submodule "roles/ansible-role-update"]
-	path = roles/ansible-role-update
-	url = https://github.com/ursinn/ansible-role-update.git
+[submodule "roles/ansible-role-ombi"]
+	path = roles/ansible-role-ombi
+	url = https://github.com/ursinn/ansible-role-ombi.git
+[submodule "roles/ansible-role-overseerr"]
+	path = roles/ansible-role-overseerr
+	url = https://github.com/ursinn/ansible-role-overseerr.git
 [submodule "roles/ansible-role-owncloud"]
 	path = roles/ansible-role-owncloud
 	url = https://github.com/ursinn/ansible-role-owncloud.git
+[submodule "roles/ansible-role-papermerge"]
+	path = roles/ansible-role-papermerge
+	url = https://github.com/ursinn/ansible-role-papermerge.git
+[submodule "roles/ansible-role-pihole"]
+	path = roles/ansible-role-pihole
+	url = https://github.com/ursinn/ansible-role-pihole.git
+[submodule "roles/ansible-role-pihole-unbound"]
+	path = roles/ansible-role-pihole-unbound
+	url = https://github.com/ursinn/ansible-role-pihole-unbound.git
+[submodule "roles/ansible-role-pip"]
+	path = roles/ansible-role-pip
+	url = https://github.com/ursinn/ansible-role-pip.git
+[submodule "roles/ansible-role-piwigo"]
+	path = roles/ansible-role-piwigo
+	url = https://github.com/ursinn/ansible-role-piwigo.git
+[submodule "roles/ansible-role-plex"]
+	path = roles/ansible-role-plex
+	url = https://github.com/ursinn/ansible-role-plex.git
+[submodule "roles/ansible-role-portainer"]
+	path = roles/ansible-role-portainer
+	url = https://github.com/ursinn/ansible-role-portainer.git
+[submodule "roles/ansible-role-postgresql"]
+	path = roles/ansible-role-postgresql
+	url = https://github.com/ursinn/ansible-role-postgresql.git
+[submodule "roles/ansible-role-privatebin"]
+	path = roles/ansible-role-privatebin
+	url = https://github.com/ursinn/ansible-role-privatebin.git
+[submodule "roles/ansible-role-prometheus"]
+	path = roles/ansible-role-prometheus
+	url = https://github.com/ursinn/ansible-role-prometheus.git
+[submodule "roles/ansible-role-promtail"]
+	path = roles/ansible-role-promtail
+	url = https://github.com/ursinn/ansible-role-promtail.git
+[submodule "roles/ansible-role-pydio-cells"]
+	path = roles/ansible-role-pydio-cells
+	url = https://github.com/ursinn/ansible-role-pydio-cells.git
+[submodule "roles/ansible-role-redis"]
+	path = roles/ansible-role-redis
+	url = https://github.com/ursinn/ansible-role-redis.git
 [submodule "roles/ansible-role-setup"]
 	path = roles/ansible-role-setup
 	url = https://github.com/ursinn/ansible-role-setup.git
+[submodule "roles/ansible-role-smokeping"]
+	path = roles/ansible-role-smokeping
+	url = https://github.com/ursinn/ansible-role-smokeping.git
+[submodule "roles/ansible-role-snipe-it"]
+	path = roles/ansible-role-snipe-it
+	url = https://github.com/ursinn/ansible-role-snipe-it.git
+[submodule "roles/ansible-role-sonarqube"]
+	path = roles/ansible-role-sonarqube
+	url = https://github.com/ursinn/ansible-role-sonarqube.git
+[submodule "roles/ansible-role-ssh"]
+	path = roles/ansible-role-ssh
+	url = https://github.com/ursinn/ansible-role-ssh.git
+[submodule "roles/ansible-role-swag"]
+	path = roles/ansible-role-swag
+	url = https://github.com/ursinn/ansible-role-swag.git
+[submodule "roles/ansible-role-update"]
+	path = roles/ansible-role-update
+	url = https://github.com/ursinn/ansible-role-update.git
 [submodule "roles/ansible-role-uptime-kuma"]
 	path = roles/ansible-role-uptime-kuma
 	url = https://github.com/ursinn/ansible-role-uptime-kuma.git
