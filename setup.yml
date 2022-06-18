@@ -7,7 +7,7 @@
   roles:
     - ansible-role-ssh
     - ansible-role-update
-    - system-setup
+    - ansible-role-setup
     - ansible-role-pip
     - ansible-role-firewall
     - ansible-role-fail2ban
@@ -27,7 +27,7 @@
     - ansible-role-archisteamfarm
     - ansible-role-loki
     - ansible-role-nextcloud
-    - app-bazarr
+    - ansible-role-bazarr
     - app-beets
     - app-boinc
     - app-booksonic
@@ -84,4 +84,4 @@
     - app-smokeping
     - app-snipe-it
     - app-sonarqube
-    - app-uptime-kuma
+    - ansible-role-uptime-kuma
