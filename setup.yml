@@ -5,27 +5,28 @@
   become: true
 
   roles:
-    - system-ssh
+    - nsible-role-ssh
     - system-update
     - system-setup
     - ansible-role-pip
     - ansible-role-firewall
-    - system-fail2ban
+    - ansible-role-fail2ban
     - ansible-role-docker
-    - system-docker
-    - system-promtail
+    - ansible-role-docker2
+    - ansible-role-promtail
     - ansible-role-oh-my-zsh
-    - ansible-node-exporter
+    - ansible-role-node-exporter
     # Customize
     - custom-oh-my-zsh
     # Docker App Helper
     - docker-mariadb
     - docker-postgresql
     - docker-redis
-    - docker-swag
+    - ansible-role-swag
     # Apps
+    - ansible-role-archisteamfarm
+    - ansible-role-loki
     - ansible-role-nextcloud
-    - app-archisteamfarm
     - app-bazarr
     - app-beets
     - app-boinc
@@ -61,7 +62,6 @@
     - app-lazylibrarian
     - app-librespeed
     - app-lidarr
-    - app-loki
     - app-lychee
     - app-medusa
     - app-mstream
