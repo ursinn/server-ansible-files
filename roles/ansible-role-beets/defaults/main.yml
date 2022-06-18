@@ -1,6 +1,0 @@
----
-app_beets_enabled: false
-app_beets_puid: '16704'
-app_beets_pgid: '16704'
-app_beets_tz: "Europe/Zurich"
-app_beets_dir: "/opt/app-beets"

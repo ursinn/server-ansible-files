@@ -46,13 +46,40 @@
 [submodule "roles/ansible-role-duplicati"]
 	path = roles/ansible-role-duplicati
 	url = https://github.com/ursinn/ansible-role-duplicati.git
-
+[submodule "roles/ansible-role-emby"]
+	path = roles/ansible-role-emby
+	url = https://github.com/ursinn/ansible-role-emby.git
+[submodule "roles/ansible-role-embystat"]
+	path = roles/ansible-role-embystat
+	url = https://github.com/ursinn/ansible-role-embystat.git
+[submodule "roles/ansible-role-emulatorjs"]
+	path = roles/ansible-role-emulatorjs
+	url = https://github.com/ursinn/ansible-role-emulatorjs.git
+[submodule "roles/ansible-role-endlessh"]
+	path = roles/ansible-role-endlessh
+	url = https://github.com/ursinn/ansible-role-endlessh.git
 [submodule "roles/ansible-role-fail2ban"]
 	path = roles/ansible-role-fail2ban
 	url = https://github.com/ursinn/ansible-role-fail2ban.git
 [submodule "roles/ansible-role-firewall"]
 	path = roles/ansible-role-firewall
 	url = https://github.com/ursinn/ansible-role-firewall.git
+[submodule "roles/ansible-role-foldingathome"]
+	path = roles/ansible-role-foldingathome
+	url = https://github.com/ursinn/ansible-role-foldingathome.git
+[submodule "roles/ansible-role-freshrss"]
+	path = roles/ansible-role-freshrss
+	url = https://github.com/ursinn/ansible-role-freshrss.git
+[submodule "roles/ansible-role-gitea"]
+	path = roles/ansible-role-gitea
+	url = https://github.com/ursinn/ansible-role-gitea.git
+[submodule "roles/ansible-role-grafana"]
+	path = roles/ansible-role-grafana
+	url = https://github.com/ursinn/ansible-role-grafana.git
+[submodule "roles/ansible-role-grocy"]
+	path = roles/ansible-role-grocy
+	url = https://github.com/ursinn/ansible-role-grocy.git
+
 [submodule "roles/ansible-role-loki"]
 	path = roles/ansible-role-loki
 	url = https://github.com/ursinn/ansible-role-loki.git
@@ -80,3 +107,12 @@
 [submodule "roles/ansible-role-update"]
 	path = roles/ansible-role-update
 	url = https://github.com/ursinn/ansible-role-update.git
+[submodule "roles/ansible-role-owncloud"]
+	path = roles/ansible-role-owncloud
+	url = https://github.com/ursinn/ansible-role-owncloud.git
+[submodule "roles/ansible-role-setup"]
+	path = roles/ansible-role-setup
+	url = https://github.com/ursinn/ansible-role-setup.git
+[submodule "roles/ansible-role-uptime-kuma"]
+	path = roles/ansible-role-uptime-kuma
+	url = https://github.com/ursinn/ansible-role-uptime-kuma.git
