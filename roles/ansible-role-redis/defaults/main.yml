@@ -1,5 +1,0 @@
----
-docker_redis_allow_empty_password: ""
-docker_redis_redis_disable_commands: ""
-docker_redis_redis_password: ""
-docker_redis_redis_aclfile: ""
