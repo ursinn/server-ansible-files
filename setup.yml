@@ -5,8 +5,8 @@
   become: true
 
   roles:
-    - nsible-role-ssh
-    - system-update
+    - ansible-role-ssh
+    - ansible-role-update
     - system-setup
     - ansible-role-pip
     - ansible-role-firewall
