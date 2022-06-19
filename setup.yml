@@ -12,7 +12,7 @@
     - ansible-role-firewall
     - ansible-role-fail2ban
     - ansible-role-docker
-    - ansible-role-docker2
+    - ansible-role-docker-custom
     - ansible-role-promtail
     - ansible-role-oh-my-zsh
     - ansible-role-node-exporter
@@ -28,8 +28,6 @@
     - ansible-role-bazarr
     - ansible-role-beets
     - ansible-role-boinc
-    - ansible-role-booksonic
-    - ansible-role-bookstack
     - ansible-role-calibre
     - ansible-role-calibre-web
     - ansible-role-couchpotato
