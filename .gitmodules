@@ -10,21 +10,12 @@
 [submodule "roles/ansible-role-boinc"]
 	path = roles/ansible-role-boinc
 	url = https://github.com/ursinn/ansible-role-boinc.git
-[submodule "roles/ansible-role-booksonic"]
-	path = roles/ansible-role-booksonic
-	url = https://github.com/ursinn/ansible-role-booksonic.git
-[submodule "roles/ansible-role-bookstack"]
-	path = roles/ansible-role-bookstack
-	url = https://github.com/ursinn/ansible-role-bookstack.git
 [submodule "roles/ansible-role-calibre"]
 	path = roles/ansible-role-calibre
 	url = https://github.com/ursinn/ansible-role-calibre.git
 [submodule "roles/ansible-role-calibre-web"]
 	path = roles/ansible-role-calibre-web
 	url = https://github.com/ursinn/ansible-role-calibre-web.git
-[submodule "roles/ansible-role-chevereto"]
-	path = roles/ansible-role-chevereto
-	url = https://github.com/ursinn/ansible-role-chevereto.git
 [submodule "roles/ansible-role-couchpotato"]
 	path = roles/ansible-role-couchpotato
 	url = https://github.com/ursinn/ansible-role-couchpotato.git
@@ -70,18 +61,12 @@
 [submodule "roles/ansible-role-freshrss"]
 	path = roles/ansible-role-freshrss
 	url = https://github.com/ursinn/ansible-role-freshrss.git
-[submodule "roles/ansible-role-gitea"]
-	path = roles/ansible-role-gitea
-	url = https://github.com/ursinn/ansible-role-gitea.git
 [submodule "roles/ansible-role-grafana"]
 	path = roles/ansible-role-grafana
 	url = https://github.com/ursinn/ansible-role-grafana.git
 [submodule "roles/ansible-role-grocy"]
 	path = roles/ansible-role-grocy
 	url = https://github.com/ursinn/ansible-role-grocy.git
-[submodule "roles/ansible-role-guacamole"]
-	path = roles/ansible-role-guacamole
-	url = https://github.com/ursinn/ansible-role-guacamole.git
 [submodule "roles/ansible-role-headphones"]
 	path = roles/ansible-role-headphones
 	url = https://github.com/ursinn/ansible-role-headphones.git
@@ -97,9 +82,6 @@
 [submodule "roles/ansible-role-homeassistant"]
 	path = roles/ansible-role-homeassistant
 	url = https://github.com/ursinn/ansible-role-homeassistant.git
-[submodule "roles/ansible-role-influxdb"]
-	path = roles/ansible-role-influxdb
-	url = https://github.com/ursinn/ansible-role-influxdb.git
 [submodule "roles/ansible-role-jellyfin"]
 	path = roles/ansible-role-jellyfin
 	url = https://github.com/ursinn/ansible-role-jellyfin.git
@@ -121,9 +103,6 @@
 [submodule "roles/ansible-role-loki"]
 	path = roles/ansible-role-loki
 	url = https://github.com/ursinn/ansible-role-loki.git
-[submodule "roles/ansible-role-lychee"]
-	path = roles/ansible-role-lychee
-	url = https://github.com/ursinn/ansible-role-lychee.git
 [submodule "roles/ansible-role-mariadb"]
 	path = roles/ansible-role-mariadb
 	url = https://github.com/ursinn/ansible-role-mariadb.git
@@ -181,15 +160,9 @@
 [submodule "roles/ansible-role-plex"]
 	path = roles/ansible-role-plex
 	url = https://github.com/ursinn/ansible-role-plex.git
-[submodule "roles/ansible-role-portainer"]
-	path = roles/ansible-role-portainer
-	url = https://github.com/ursinn/ansible-role-portainer.git
 [submodule "roles/ansible-role-postgresql"]
 	path = roles/ansible-role-postgresql
 	url = https://github.com/ursinn/ansible-role-postgresql.git
-[submodule "roles/ansible-role-privatebin"]
-	path = roles/ansible-role-privatebin
-	url = https://github.com/ursinn/ansible-role-privatebin.git
 [submodule "roles/ansible-role-prometheus"]
 	path = roles/ansible-role-prometheus
 	url = https://github.com/ursinn/ansible-role-prometheus.git
