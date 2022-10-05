@@ -1,7 +1,6 @@
 ---
 - name: "Set up a Server"
-  #hosts: "{{ target if target is defined else 'servers' }}"
-  hosts: "localhost"
+  hosts: "{{ target if target is defined else 'all' }}"
   become: true
 
   roles:
