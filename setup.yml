@@ -73,3 +73,4 @@
     - ansible-role-snipe-it
     - ansible-role-sonarqube
     - ansible-role-uptime-kuma
+    - ansible-role-mailcow
