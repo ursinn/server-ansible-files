@@ -199,3 +199,6 @@
 [submodule "roles/ansible-role-uptime-kuma"]
 	path = roles/ansible-role-uptime-kuma
 	url = https://github.com/ursinn/ansible-role-uptime-kuma.git
+[submodule "roles/ansible-role-mailcow"]
+	path = roles/ansible-role-mailcow
+	url = https://github.com/ursinn/ansible-role-mailcow.git
