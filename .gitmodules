@@ -202,3 +202,6 @@
 [submodule "roles/ansible-role-mailcow"]
 	path = roles/ansible-role-mailcow
 	url = https://github.com/ursinn/ansible-role-mailcow.git
+[submodule "roles/ansible-role-netplan"]
+	path = roles/ansible-role-netplan
+	url = https://github.com/ursinn/ansible-role-netplan.git
