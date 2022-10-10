@@ -75,3 +75,4 @@
     - ansible-role-sonarqube
     - ansible-role-uptime-kuma
     - ansible-role-mailcow
+    - ansible-role-k3s
