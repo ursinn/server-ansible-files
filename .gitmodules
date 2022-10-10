@@ -205,3 +205,6 @@
 [submodule "roles/ansible-role-netplan"]
 	path = roles/ansible-role-netplan
 	url = https://github.com/ursinn/ansible-role-netplan.git
+[submodule "roles/ansible-role-k3s"]
+	path = roles/ansible-role-k3s
+	url = https://github.com/ursinn/ansible-role-k3s.git
