@@ -23,10 +23,9 @@
     - ansible-role-swag
     # Apps
     - ansible-role-archisteamfarm
-    - ansible-role-loki
-    - ansible-role-nextcloud
     - ansible-role-bazarr
     - ansible-role-beets
+    - ansible-role-bgp-bird2
     - ansible-role-boinc
     - ansible-role-calibre
     - ansible-role-calibre-web
@@ -50,14 +49,18 @@
     - ansible-role-homeassistant
     - ansible-role-jellyfin
     - ansible-role-jenkins
+    - ansible-role-k3s
     - ansible-role-keycloak
     - ansible-role-lazylibrarian
     - ansible-role-librespeed
     - ansible-role-lidarr
+    - ansible-role-loki
+    - ansible-role-mailcow
     - ansible-role-medusa
     - ansible-role-mstream
     - ansible-role-mylar3
     - ansible-role-netbootxyz
+    - ansible-role-nextcloud
     - ansible-role-nzbget
     - ansible-role-nzbhydra
     - ansible-role-ombi
@@ -74,5 +77,3 @@
     - ansible-role-snipe-it
     - ansible-role-sonarqube
     - ansible-role-uptime-kuma
-    - ansible-role-mailcow
-    - ansible-role-k3s
