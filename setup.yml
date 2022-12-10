@@ -16,6 +16,7 @@
     - ansible-role-oh-my-zsh
     - ansible-role-node-exporter
     - ansible-role-netplan
+    #- ansible-role-wireguard
     # Docker App Helper
     - ansible-role-mariadb
     - ansible-role-postgresql
