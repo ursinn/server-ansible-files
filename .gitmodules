@@ -211,3 +211,6 @@
 [submodule "roles/ansible-role-bgp-bird2"]
 	path = roles/ansible-role-bgp-bird2
 	url = https://github.com/ursinn/ansible-role-bgp-bird2.git
+[submodule "roles/ansible-role-wireguard"]
+	path = roles/ansible-role-wireguard
+	url = https://github.com/ursinn/ansible-role-wireguard.git
