@@ -23,6 +23,7 @@
     - ansible-role-redis
     - ansible-role-swag
     # Apps
+    - ansible-role-alice-lg
     - ansible-role-archisteamfarm
     - ansible-role-bazarr
     - ansible-role-beets
