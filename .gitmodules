@@ -214,3 +214,6 @@
 [submodule "roles/ansible-role-wireguard"]
 	path = roles/ansible-role-wireguard
 	url = https://github.com/ursinn/ansible-role-wireguard.git
+[submodule "roles/ansible-role-alice-lg"]
+	path = roles/ansible-role-alice-lg
+	url = https://github.com/ursinn/ansible-role-alice-lg.git
