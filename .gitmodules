@@ -217,3 +217,6 @@
 [submodule "roles/ansible-role-alice-lg"]
 	path = roles/ansible-role-alice-lg
 	url = https://github.com/ursinn/ansible-role-alice-lg.git
+[submodule "roles/ansible-role-ripe-atlas"]
+	path = roles/ansible-role-ripe-atlas
+	url = https://github.com/ursinn/ansible-role-ripe-atlas.git

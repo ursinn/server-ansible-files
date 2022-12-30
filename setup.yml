@@ -75,6 +75,7 @@
     - ansible-role-plex
     - ansible-role-prometheus
     - ansible-role-pydio-cells
+    - ansible-role-ripe-atlas
     - ansible-role-smokeping
     - ansible-role-snipe-it
     - ansible-role-sonarqube
