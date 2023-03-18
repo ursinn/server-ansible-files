@@ -1,0 +1,7 @@
+---
+- name: "Set up a Mail Server"
+  hosts: "{{ target if target is defined else 'mail' }}"
+  become: true
+
+  roles:
+    - ansible-role-mailcow
