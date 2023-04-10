@@ -1,0 +1,7 @@
+---
+- name: "Set up bgp"
+  hosts: "{{ target if target is defined else 'as202427' }}"
+  become: true
+
+  roles:
+    - ansible-role-bgp-bird2
